@@ -21,8 +21,16 @@ h1 {
     font-size: 4rem;
 }
 
-p {
+p,
+label {
     font-size: 2rem;
+}
+
+input {
+    width: 40rem;
+    height: 4rem;
+    padding: 0 1rem;
+    font-size: 1.5rem;
 }
 
 .navbar {
@@ -42,7 +50,8 @@ p {
     padding: 1.5rem;
 }
 
-.heroSection {
+.heroSection,
+.loginSection {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,8 +59,23 @@ p {
     height: 70vh;
 }
 
-.heroSection h1 {
-    text-align: center;
+.loginSection form {
+    display: flex;
+    flex-direction: column;
+    padding: 5rem;
+}
+
+.loginSection form input {
+    margin-bottom: 2rem;
+}
+
+.loginSection form input:nth-of-type(2) {
+    margin-bottom: 5rem;
+}
+
+.link-forgotPassword {
+    color: blue;
+    text-decoration: underline;
 }
 
 .footer {
