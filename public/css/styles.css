@@ -21,6 +21,10 @@ h1 {
     font-size: 4rem;
 }
 
+p {
+    font-size: 2rem;
+}
+
 .navbar {
     display: flex;
     justify-content: end;
@@ -38,14 +42,15 @@ h1 {
     padding: 1.5rem;
 }
 
-.hero {
+.heroSection {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 70vh;
 }
 
-.hero h1 {
+.heroSection h1 {
     text-align: center;
 }
 
