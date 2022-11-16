@@ -1,0 +1,1 @@
+INSERT INTO `virtuajoint`.`users` (`idUser`, `userFName`, `userLName`, `aliasUser`, `paisUser`, `emailUser`, `psswdUser`, `regDate`) VALUES ('0', 'Natan', 'Mendez', 'natinho', 'Mexico', 'natan@natan.com', '123456', '2022-11-15 18:09:54');
