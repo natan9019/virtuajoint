@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gracias por tu registro</title>
+    <title>BD Creada</title>
 </head>
 <body>
-    <h1>Gracias por registrarte <?php echo $_POST["fname"]; ?> </h1>
-    <h2>Da click en "confirma tu cuenta" en el correo que hemos enviado al email que indicaste: "<?php echo $_POST["email"]; ?>" </h2>
+    <h1>Haz creado tu Base de datos: <?php echo $_POST["txtDbName"]; ?> </h1>
 
     <?php
         
@@ -80,3 +79,32 @@
 
 </body>
 </html>
+
+<?php
+/*Creamos la BD de Virtuajoint */
+
+        //DECLARAMOS las variables a utilizar (Mas a adelante hay que sacar de aqui estos datos)
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = $_POST["txtDbName"];
+
+        //Intentamos abrir la conexión y crear la BD
+        try 
+        {
+            $conn = new PDO("mysql:host=$servername", $username, $password);
+            // set the PDO error mode to exception
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $sql = "CREATE DATABASE $dbname";
+            // use exec() because no results are returned
+            $conn->exec($sql);
+            echo "Database: " . $dbname . " created successfully<br>";
+        } 
+        catch(PDOException $e) //Si no pudo, lanza un error en pantalla
+        {
+            echo $sql . "<br>" . $e->getMessage();                          
+        }
+        
+        $conn = null;//cierra la conexión
+
+ ?>

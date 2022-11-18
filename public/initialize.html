@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>Initialize</title>
     <link rel="stylesheet" href="./css/styles.css">
-    <title>Home - VirtuaJoint</title>
 </head>
-
 <body>
     <nav class="navbar">
         <ul class="navbar-menu">
@@ -21,15 +16,18 @@
             <li> <a href="http://virtuajoint.test/initialize.html">Initialize</a></li>
         </ul>
     </nav>
+    <div id="formInitializeContainer">
+        <form action="/public/createSystemDB.php" method="post">
+            <label for="lblDbName">Nombre de la base de datos (Solo una palabra):</label><br>
+            <input type="text" id="txtDbName" name="txtDbName" placeholder="Nombre DB"><span class="asterisk"> *</span><br><br>
 
-    <section class="heroSection">
-        <h1>Bienvenido a Virtuajoint</h1>
-        <p>Virtuajoint es una aplicación que te permite gestionar colecciones</p>
-    </section>
+            <p>
+                <span class="asterisk"> *</span>Campos obligatorios
+            </p>
 
-    <footer class="footer">
-        <p>VirtuaJoint 2022</p>
-    </footer>
+
+            <input type="submit" id="btnSubmit" value="Enviar">
+        </form>
+    </div>
 </body>
-
 </html>
