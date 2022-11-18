@@ -21,6 +21,18 @@ h1 {
     font-size: 4rem;
 }
 
+p,
+label {
+    font-size: 2rem;
+}
+
+input {
+    width: 40rem;
+    height: 4rem;
+    padding: 0 1rem;
+    font-size: 1.5rem;
+}
+
 .navbar {
     display: flex;
     justify-content: end;
@@ -38,15 +50,37 @@ h1 {
     padding: 1.5rem;
 }
 
-.hero {
+.heroSection,
+.loginSection,
+.signupSection {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 70vh;
 }
 
-.hero h1 {
-    text-align: center;
+.loginSection form {
+    display: flex;
+    flex-direction: column;
+    padding: 5rem;
+}
+
+.loginSection form input {
+    margin-bottom: 2rem;
+}
+
+form input:last-of-type {
+    margin-top: 2rem;
+}
+
+.signupSection h2 {
+    margin-bottom: 2rem;
+}
+
+.link-forgotPassword {
+    color: blue;
+    text-decoration: underline;
 }
 
 .footer {

@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
+    <title>Sign In - VirtuaJoint</title>
 </head>
+
 <body>
     <nav class="navbar">
         <ul class="navbar-menu">
@@ -18,7 +23,7 @@
     </nav>
     <h1>Sign In</h1>
     <h2>Crea tu cuenta para usar Virtuajoint</h2>
-    <div id="formContainer">
+    <section class="signupSection">
         <form action="/action_page.php" method="post">
             <label for="fname">Nombre:</label><br>
             <input type="text" id="fname" name="fname" placeholder="Juanito"><span class="asterisk"> *</span><br><br>
@@ -44,17 +49,14 @@
             <p>
                 <span class="asterisk"> *</span>Campos obligatorios
             </p>
-
-            <!-- <label for="dbName">Proyecto (Solo una palabra):</label><br>
-            <input type="text" id="dbName" name="txtDbName" value="Nombre de tu proyecto"><br><br> -->
-
             <input type="submit" id="btnSubmit" value="Enviar">
         </form>
-    </div>
-    <footer>
-        <p>
-            Este es el footer
-        </p>
+        
+    </section>
+
+    <footer class="footer">
+        <p>VirtuaJoint 2022</p>
     </footer>
 </body>
+
 </html>
