@@ -21,9 +21,13 @@ h1 {
     font-size: 4rem;
 }
 
+h2 {
+    font-size: 2rem;
+}
+
 p,
 label {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 input {
@@ -50,32 +54,39 @@ input {
     padding: 1.5rem;
 }
 
-.heroSection,
-.loginSection,
-.signupSection {
+.mainSection {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 70vh;
+    width: 100%;
 }
 
-.loginSection form {
+.form-login {
     display: flex;
     flex-direction: column;
     padding: 5rem;
 }
 
-.loginSection form input {
-    margin-bottom: 2rem;
+.form-signin {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    padding: 5rem;
 }
 
-form input:last-of-type {
+form input {
+    margin-bottom: 1rem;
+}
+
+input[type="submit"] {
     margin-top: 2rem;
 }
 
-.signupSection h2 {
-    margin-bottom: 2rem;
+.form-div {
+    display: flex;
+    flex-direction: column;
 }
 
 .link-forgotPassword {
@@ -92,9 +103,18 @@ form input:last-of-type {
     font-size: 2rem;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 900px) {
+    form {
+        flex-direction: column;
+        gap: 0;
+    }
+
     .navbar {
         justify-content: center;
+    }
+
+    .mainSection {
+        margin-top: 5rem;
     }
 
     .hero {
@@ -104,9 +124,13 @@ form input:last-of-type {
     .navbar-menu {
         flex-direction: column;
     }
+
+    .footer {
+        position: relative;
+        margin-top: 10rem;
+    }
 }
 
-span.asterisk{
+span.asterisk {
     color: crimson;
 }
-
