@@ -20,11 +20,11 @@
     </nav>
     <div id="formInitializeContainer">
         <form action="/createSystemDB.php" method="POST">
-            <h1>Presiona "Crear DB" para construir la base de datos de VirtuaJoint</h1><br>
-            <label for="lblDbName">Nombre de la base de datos (Solo una palabra):</label><br>
-            <input type="text" id="txtDbName" name="txtDbName" placeholder="NombreBD"><span class="asterisk">*</span><br><br>
+            <h1>Pulsa "Inicializar" para implementar VirtuaJoint</h1><br>
+            <label for="lblDbName">Nombre de la base de datos</label><br>
+            <input type="text" id="txtDbName" name="txtDbName" value="virtuajoint" readonly="readonly"><span class="asterisk">*</span><br><br>
             <p><span class="asterisk"> *</span>Campos obligatorios</p>
-            <input type="submit" id="btnSubmit" value="Crear DB">
+            <input type="submit" id="btnSubmit" value="Inicializar">
         </form>
     </div>
 </body>
