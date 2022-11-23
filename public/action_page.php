@@ -5,10 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gracias por tu registro</title>
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <h1>Gracias por registrarte <?php echo $_POST["fname"]; ?> </h1>
-    <h2>Da click en "confirma tu cuenta" en el correo que hemos enviado al email que indicaste: "<?php echo $_POST["email"]; ?>" </h2>
+    <nav class="navbar">
+        <ul class="navbar-menu">
+            <li> <a href="http://virtuajoint.test/">Home</a> </li>
+            <li> <a href="http://virtuajoint.test/login.html">Login</a> </li>
+            <li> <a href="http://virtuajoint.test/signin.html">Sign In</a> </li>
+            <li> <a href="http://virtuajoint.test/initialize.html">Initialize</a></li>
+        </ul>
+    </nav>
+    <!-- FIXME El texto para los H2 y el texto sin formato se ve muy pequeño -->
+    <h1>Gracias por registrarte <?php echo $_POST["txtFName"]; ?> </h1>
+    <h2>Da click en "confirma tu cuenta" en el correo que hemos enviado al email que indicaste: "<?php echo $_POST["txtEmail"]; ?>" </h2>
 
     <?php
         
@@ -28,20 +38,22 @@
         {
             //Definimos las variables a utilizar y las inicializamos vacias
             //variables de error:
-            $fnameErr = $lnameErr = $aliasErr = $countryErr = $psswordErr = $emailErr = $genderErr = $websiteErr = "";
+            $userFNameErr = $userLNameErr = $aliasUserErr = $countryUserErr = $genderUserErr = $emailUserErr = $psswdUserErr  = $websiteUserErr = "";
             //variables para los valores del POST:
-            $userFname = $userLName = $aliasUser = $countryUser = $emailUser = $psswdUser = $genderErr = $websiteErr = "";
+            $userFName = $userLName = $aliasUser = $countryUser = $genderUser = $emailUser = $psswdUser  = $websiteUser = "";
 
-            if(empty($_POST["fname"]))
-            {
-                $nameErr = "El nombre es requerido";
-            }
-            $userFname = test_input($_POST["fname"]);
-            $userLName = test_input($_POST["lname"]);
-            $aliasUser = test_input($_POST["alias"]);
-            $countryUser = test_input($_POST["country"]);
-            $emailUser = test_input($_POST["email"]);
-            $psswdUser = test_input($_POST["pssword"]);
+            // if(empty($_POST["txtFName"]))
+            // {
+            //     $userFnameErr = "El nombre es requerido";
+            // }
+            $userFName = test_input($_POST["txtFName"]);
+            $userLName = test_input($_POST["txtLName"]);
+            $aliasUser = test_input($_POST["txtAlias"]);
+            $countryUser = test_input($_POST["txtCountry"]);
+            $genderUser = test_input($_POST["txtGender"]);
+            $emailUser = test_input($_POST["txtEmail"]);
+            $psswdUser = test_input($_POST["txtPassword"]);
+            $websiteUser = test_input($_POST["txtWebsite"]);
         }
 
         //Aqui validamos cada variable con la función test_input
@@ -59,11 +71,11 @@
             $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
             // set the PDO error mode to exception
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "INSERT INTO users (userFName, userLName, aliasUser, paisUser, emailUser, psswdUser)
-            VALUES ('$userFname', '$userLName', '$aliasUser', '$paisUSer', '$emailUser', '$psswdUser')";
+            $sql = "INSERT INTO users (userFName, userLName, aliasUser, paisUser, genderUser, emailUser, psswdUser, websiteUser)
+            VALUES ('$userFName', '$userLName', '$aliasUser', '$countryUser', '$genderUser', '$emailUser', '$psswdUser', '$websiteUser')";
             // use exec() because no results are returned
             $conn->exec($sql);
-            echo "New record created successfully";
+            echo "<h3>Registro agregado correctamente<h3>";
         } 
         catch(PDOException $e) 
         {

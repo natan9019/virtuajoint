@@ -71,8 +71,10 @@
                 `userLName` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'Apellido del usuario' COLLATE 'utf8mb4_general_ci',
                 `aliasUser` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'Nickname o nombre de usuario dentro del sistema' COLLATE 'utf8mb4_general_ci',
                 `paisUser` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'Nacionalidad del usuario' COLLATE 'utf8mb4_general_ci',
+                `genderUser` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'Genero del usuario' COLLATE 'utf8mb4_general_ci',
                 `emailUser` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'Correo electronico del usuario' COLLATE 'utf8mb4_general_ci',
                 `psswdUser` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'Contraseña del usuario' COLLATE 'utf8mb4_general_ci',
+                `websiteUser` VARCHAR(50) COMMENT 'Sitio web del usuario (OPCIONAL)' COLLATE 'utf8mb4_general_ci',
                 `regDate` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Registro de tiempo de la creación del usuario',
                 PRIMARY KEY (`idUser`) USING BTREE
             )
@@ -100,8 +102,8 @@
             // configuramos el modo de error de PDO con una excepecion:
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             //Metemos en una variable el código SQL a ejecutar:
-            $sqlInsertInTable = "INSERT INTO users (userFName, userLName, aliasUser, paisUser, emailUser, psswdUser)
-            values ('admin', 'super', 'Super Admin', 'Mexico', 'email@domain', 'root')";
+            $sqlInsertInTable = "INSERT INTO users (userFName, userLName, aliasUser, paisUser, genderUser, emailUser, psswdUser, websiteUser)
+            values ('Super', 'Admin', 'SuperAdmin', 'Mexico', 'Macho', 'email@domain', 'root', 'www.virtuajoint.com.mx')";
 
             //Usamos exec() por que no se returnan resultados:
             $conn->exec($sqlInsertInTable);
