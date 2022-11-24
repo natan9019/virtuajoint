@@ -24,40 +24,39 @@
 
     <section class="signupSection mainSection">
         <h1>Sign In</h1>
-        <h2>Crea tu cuenta para usar Virtuajoint</h2>
+        <!-- FIXME @humberto Revertí tus cambios aquí, revisemos juntos como solucionar este acomodo -->
+        <h2>Crea tu cuenta para usar Virtuajoint</h2> 
+        <section class="signupSection">
+            <form action="/action_page.php" method="post">
 
-        <form action="/action_page.php" method="post" class="form-signin">
-            <div class="form-div">
-                <label for="lblFName">Nombre:</label>
-                <input type="text" id="txtFName" name="txtFName" placeholder="Juanito" required>
+                <label for="lblFName">Nombre:</label><br>
+                <input type="text" id="txtFName" name="txtFName" placeholder="Juanito" required><span class="asterisk" > *</span><br><br>
 
-                <label for="lblLName">Apellido:</label>
-                <input type="text" id="txtLName" name="txtLName" placeholder="Alimaña" required>
+                <label for="lblLName">Apellido:</label><br>
+                <input type="text" id="txtLName" name="txtLName" placeholder="Alimaña" required><span class="asterisk"> *</span><br><br>
 
-                <label for="lblAlias">Alias:</label>
-                <input type="text" id="txtAlias" name="txtAlias" placeholder="Alias" required>
+                <label for="lblAlias">Alias</label><br>
+                <input type="text" id="txtAlias" name="txtAlias" placeholder="Alias" required><span class="asterisk"> *</span><br><br>
 
-                <label for="lblCountry">País:</label>
-                <input type="text" id="txtCountry" name="txtCountry" placeholder="De las maravillas" required>
-            </div>
+                <label for="lblCountry">País</label><br>
+                <input type="text" id="txtCountry" name="txtCountry" placeholder="De las maravillas" required><span class="asterisk"> *</span><br><br>
 
-            <div class="form-div">
-                <label for="lblGender">Género:</label>
-                <input type="text" id="txtGender" name="txtGender" placeholder="Genero" required>
+                <label for="lblGender">Género</label><br>
+                <input type="text" id="txtGender" name="txtGender" placeholder="Genero" required><span class="asterisk"> *</span><br><br>
 
-                <label for="lblEmail">Correo:</label>
-                <input type="email" id="txtEmail" name="txtEmail" placeholder="email@domain.com" required>
+                <label for="lblEmail">Correo:</label><br>
+                <input type= "email" id="txtEmail" name="txtEmail" placeholder="email@domain.com" required><span class="asterisk"> *</span><br><br>
 
-                <label for="lblpssword">Contraseña:</label>
-                <input type="password" id="txtPassword" name="txtPassword" placeholder="********" required>
+                <label for="lblpssword">Contraseña</label><br>
+                <input type="password" id="txtPassword" name="txtPassword" placeholder="********" required><span class="asterisk"> *</span><br><br>
 
-                <label for="lblWebsite">Sitio Web:</label>
-                <input type="text" id="txtWebsite" name="txtWebsite" placeholder="www.sitio.com">
-            </div>
-        </form>
+                <label for="lblWebsite">Sitio Web</label><br>
+                <input type="text" id="txtWebsite" name="txtWebsite" placeholder="www.sitio.com"><br>
+
+                <p><span class="asterisk"> *</span>Campos obligatorios</p>
+                <input type="submit" id="btnSubmit" value="Enviar">
+            </form>
         <p><span class="asterisk">*</span>Campos obligatorios</p>
-        <input type="submit" id="btnSubmit" value="Enviar">
-
     </section>
 
     <footer class="footer">

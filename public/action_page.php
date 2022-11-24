@@ -42,10 +42,7 @@
             //variables para los valores del POST:
             $userFName = $userLName = $aliasUser = $countryUser = $genderUser = $emailUser = $psswdUser  = $websiteUser = "";
 
-            // if(empty($_POST["txtFName"]))
-            // {
-            //     $userFnameErr = "El nombre es requerido";
-            // }
+            //Validamos las variables que vienen del formulario
             $userFName = test_input($_POST["txtFName"]);
             $userLName = test_input($_POST["txtLName"]);
             $aliasUser = test_input($_POST["txtAlias"]);
