@@ -21,7 +21,7 @@
     <section class="mainSection">
         <h1>Gracias por registrarte <?php echo $_POST["txtFName"]; ?> </h1>
         <h2>Da click en "confirma tu cuenta" en el correo que hemos enviado al email que indicaste: "<?php echo $_POST["txtEmail"]; ?>" </h2>
-    </section>
+    
 
     <?php
         
@@ -87,7 +87,7 @@
         /*Terminamos de insertar los valores del nuevo usuario en la BD de "Virtuajoint", tabla "users" */
     ?>
 
-
+    </section>
 
 
 </body>
