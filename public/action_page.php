@@ -17,8 +17,11 @@
         </ul>
     </nav>
     <!-- FIXME El texto para los H2 y el texto sin formato se ve muy pequeño -->
-    <h1>Gracias por registrarte <?php echo $_POST["txtFName"]; ?> </h1>
-    <h2>Da click en "confirma tu cuenta" en el correo que hemos enviado al email que indicaste: "<?php echo $_POST["txtEmail"]; ?>" </h2>
+
+    <section class="mainSection">
+        <h1>Gracias por registrarte <?php echo $_POST["txtFName"]; ?> </h1>
+        <h2>Da click en "confirma tu cuenta" en el correo que hemos enviado al email que indicaste: "<?php echo $_POST["txtEmail"]; ?>" </h2>
+    </section>
 
     <?php
         
