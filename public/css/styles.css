@@ -69,11 +69,12 @@ input {
     padding: 5rem;
 }
 
+/* FIXME @HUMBERTO Modifiqué momentaneamente este estilo para acomodar el formulario */
 .form-signin {
-    display: flex;
+    display: grid;
     flex-direction: row;
-    gap: 5rem;
-    padding: 5rem;
+    /* gap: 5rem;
+    padding: 5rem; */
 }
 
 form input {
@@ -134,3 +135,4 @@ input[type="submit"] {
 span.asterisk {
     color: crimson;
 }
+
