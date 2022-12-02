@@ -1,0 +1,1 @@
+SELECT aliasUser FROM users WHERE aliasUser = 'SuperAdmin'

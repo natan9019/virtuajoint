@@ -17,6 +17,10 @@
         </section>
         <section id="heroSection">
             <?php
+
+                //Se invoca la función session start para registrar cuando se tuvo una sesión correcta: https://www.php.net/manual/en/function.session-start.php 
+                session_start();
+
                 //DECLARAMOS las variables a utilizar para la conexión (Mas a adelante hay que sacar de aqui estos datos)
                 $servername = "localhost";
                 $username = "root";
@@ -32,8 +36,8 @@
                     $aliasUser = $psswdUser = "";
                     
                     //Validamos las variables que vienen del formulario:
-                        $aliasUser = test_input($_POST["txtUserName"]);
-                        $psswdUser = test_input($_POST["txtPsswd"]);
+                    $aliasUser = test_input($_POST["txtUserName"]);
+                    $psswdUser = test_input($_POST["txtPsswd"]);
                 }
 
                 //Declaramos la funcion que valida el texto que traen los campos del formulario de login
@@ -50,6 +54,11 @@
                 {
                     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
                     
+                    // Validar la conexión de base de datos.
+                    if ($conn->connect_error) {
+                        die("Connection failed: " . $conn->connect_error);
+                    }
+
                     //seteamos el modo de error de PDO para una excepcion:
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                     
