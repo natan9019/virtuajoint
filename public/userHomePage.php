@@ -105,7 +105,7 @@
                 }
                 catch(PDOException $e)
                 {
-                    echo $sqlSelectScript . "<br><h3>El usuario no existe</h3>" . $e->getMessage();
+                    echo $sqlSelectScript . "<br><h3>La conexión a la bd falló</h3>" . $e->getMessage();
                 }
 
                 //Cerramos la conexión al servidor de BD
