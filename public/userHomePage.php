@@ -50,63 +50,7 @@
                     return $data;
                 }
 
-                //Validamos si el usuario existe, si es verdadero mostramos su info en una tabla, si es falso mostramos un mensaje de error:
-
-                try
-                {
-                    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-
-                    //seteamos el modo de error de PDO para una posible excepcion:
-                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-                    //Creamos la variable PHP y le pasamos el script SQL:
-                    $sqlSelectWhereScript = $conn->prepare("SELECT aliasUser FROM users WHERE aliasUser = '$aliasUser'");
-                    $sqlSelectWhereScript->execute();
-
-                    // set the resulting array to associative
-                    $result = $sqlSelectWhereScript->setFetchMode(PDO::FETCH_ASSOC);
-
-                    foreach(new TableRows(new RecursiveArrayIterator($sqlSelectWhereScript->fetchAll())) as $column=>$register) 
-                    {
-                        $returnedAlias = $register;
-                    }
-
-                    //Volcado de variable para verificar el valor del alias traido de la bd
-                    // var_dump($returnedAlias);
-
-                    if(empty($returnedAlias))
-                    {
-                        echo "El usuario no existe, compita, ¡registrate primero!";
-                    }
-                    else 
-                    {
-                        
-                        echo "<p>Bienvenido $returnedAlias</p><br>";
-                    }
-                }
-
-                catch(PDOException $e)
-                {
-                    echo $sqlSelectWhereScript . "<br><h3>La conexión a la bd falló</h3>" . $e->getMessage();
-                }
-                
-
-                //Intentamos abrir la conexión a la BD y hacer un select para traer la info del usuario
-                echo "<table style='border: solid 1px black;'>";
-                echo 
-                "<tr>
-                    <th>Número</th>
-                    <th>Usuario</th>
-                    <th>Apellido</th>
-                    <th>Alias</th>
-                    <th>Pais</th>
-                    <th>Genero</th>
-                    <th>E-Mail</th>
-                    <th>Contraseña</th>
-                    <th>Web Site</th>
-                    <th>Registrado</th>
-                </tr>";
-
+                //Cuando se invoca esta clase renderiza la tabla en pantalla con los registros encontrados en la BD
                 class TableRows extends RecursiveIteratorIterator 
                 {
                     function __construct($it) {
@@ -126,45 +70,110 @@
                     }
                 }
 
+                //Validamos si el usuario existe, si es verdadero mostramos su info en una tabla, si es falso mostramos un mensaje de error:
                 try
                 {
+                    //Definimos la cadena de conexión.
                     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-                    
-                    //seteamos el modo de error de PDO para una excepcion:
+
+                    //seteamos el modo de error de PDO para una posible excepcion:
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    
-                    //Pasamos el código SQL a la variable de PHP que se usará para ejecutarlo:
 
-                    $sqlSelectScript = $conn->prepare("SELECT * FROM users where aliasUser = '$aliasUser'");
-                    $sqlSelectScript->execute();
-                    
+                    //Creamos la variable PHP y le pasamos el script SQL:
+                    $sqlSelectWhereScript = $conn->prepare("SELECT aliasUser FROM users WHERE aliasUser = '$aliasUser'");
+                    $sqlSelectWhereScript->execute();
+
                     // set the resulting array to associative
-                    $result = $sqlSelectScript->setFetchMode(PDO::FETCH_ASSOC);
+                    $result = $sqlSelectWhereScript->setFetchMode(PDO::FETCH_ASSOC);
 
-                    foreach(new TableRows(new RecursiveArrayIterator($sqlSelectScript->fetchAll())) as $column=>$register) 
+                    //Asignamos el resultado traido de la BD a la variable returnedAlias
+                    foreach(new TableRows(new RecursiveArrayIterator($sqlSelectWhereScript->fetchAll())) as $column=>$register) 
                     {
-                        echo $register;
+                        $returnedAlias = $register;
+                    }
+
+                    //Cerramos la conexión al servidor de BD abierta para traer el alias
+                    $conn = null;
+
+                    //Volcado de variable para verificar el valor del alias traido de la bd
+                    // var_dump($returnedAlias);
+
+                    if(empty($returnedAlias))
+                    {
+                        echo "<p>El usuario no existe, compita, ¡registrate primero!</p>";
+                    }
+                    else 
+                    {
+                        //Mostramos el alias del usuario en pantalla:
+                        echo "<p>Bienvenido $returnedAlias</p><br>";
+
+                        //Intentamos abrir la conexión a la BD y hacer un select para traer la info del usuario
+                        echo "<table style='border: solid 1px black;'>";
+                        echo 
+                        "<tr>
+                            <th>Número</th>
+                            <th>Usuario</th>
+                            <th>Apellido</th>
+                            <th>Alias</th>
+                            <th>Pais</th>
+                            <th>Genero</th>
+                            <th>E-Mail</th>
+                            <th>Contraseña</th>
+                            <th>Web Site</th>
+                            <th>Registrado</th>
+                        </tr>";
+
+                        try
+                        {
+                            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+                            
+                            //seteamos el modo de error de PDO para una excepcion:
+                            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                            
+                            //Pasamos el código SQL a la variable de PHP que se usará para ejecutarlo:
+                            $sqlSelectScript = $conn->prepare("SELECT * FROM users where aliasUser = '$aliasUser'");
+                            $sqlSelectScript->execute();
+                            
+                            // set the resulting array to associative
+                            $result = $sqlSelectScript->setFetchMode(PDO::FETCH_ASSOC);
+
+                            foreach(new TableRows(new RecursiveArrayIterator($sqlSelectScript->fetchAll())) as $column=>$register) 
+                            {
+                                echo $register;
+                            }
+                        }
+                        catch(PDOException $e)
+                        {
+                            echo $sqlSelectScript . "<br><h3>La conexión a la bd falló</h3>" . $e->getMessage();
+                        }
+
+                        //Cerramos la conexión al servidor de BD
+                        $conn = null;
+
+                        //Cerramos la etiqueta del elemento tabla
+                        echo "</table>";
+                        
+                        //Volcamos las variables para ver su contenido
+                        // echo "<br><p>";
+                        //     var_dump($result);
+                        // echo "</p>";
+                        // echo "<br><p>";
+                        //     var_dump($sqlSelectScript);
+                        // echo "</p>";
+                        // echo "<br><p>";
+                        //     var_dump($column, $register);
+                        // echo "</p>";
+
                     }
                 }
+
                 catch(PDOException $e)
                 {
-                    echo $sqlSelectScript . "<br><h3>La conexión a la bd falló</h3>" . $e->getMessage();
+                    echo $sqlSelectWhereScript . "<br><h3>La conexión a la bd falló</h3>" . $e->getMessage();
                 }
-
-                //Cerramos la conexión al servidor de BD
-                $conn = null;
-                echo "</table>";
                 
-                //Volcamos las variables para ver su contenido
-                // echo "<br><p>";
-                //     var_dump($result);
-                // echo "</p>";
-                // echo "<br><p>";
-                //     var_dump($sqlSelectScript);
-                // echo "</p>";
-                // echo "<br><p>";
-                //     var_dump($column, $register);
-                // echo "</p>";
+
+                
 
             ?>
 
