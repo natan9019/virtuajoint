@@ -27,6 +27,7 @@
                 $password = "";
                 $dbname = "virtuajoint";
 
+
                 //Declaramos la variable donde se traerá el select del alias
                 $returnedAlias = "";
 
@@ -169,12 +170,8 @@
 
                 catch(PDOException $e)
                 {
-                    echo $sqlSelectWhereScript . "<br><h3>La conexión a la bd falló</h3>" . $e->getMessage();
+                    echo $sqlSelectWhereScript . "<br><h3>La conexión a la bd falló </h3>" . $e->getMessage();
                 }
-                
-
-                
-
             ?>
 
         </section>

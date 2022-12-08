@@ -18,9 +18,9 @@
     </nav>
     <?php
         //DECLARAMOS las variables a utilizar para la conexión (Mas a adelante hay que sacar de aqui estos datos)
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
+        $servername = $_POST["txtServerName"];
+        $username = $_POST["txtAdminName"];
+        $password = $_POST["txtPassword"];
         $dbname = $_POST["txtDbName"];
  
         /******************************* Creación de la bd***********************/
@@ -49,11 +49,11 @@
             $sql = "CREATE DATABASE $dbname";
             // use exec() because no results are returned
             $conn->exec($sql);
-            echo "Database: " . $dbname . " created successfully<br>";
+            echo "<p>Database: " . $dbname . " created successfully</p><br>";
         } 
         catch(PDOException $e) //Si no pudo, lanza un error en pantalla
         {
-            echo "Error: ". $sql . "<br>" . $e->getMessage();                          
+            echo "<p>Error: ". $sql . "<br>" . $e->getMessage() . "</p>";                          
         }
         
         $conn = null;//cerramos la conexion a la bd 
@@ -85,11 +85,11 @@
 
             // use exec() because no results are returned
             $conn->exec($sqlQueryCreateTable);
-            echo "Table Users created successfully" . "<br>";
+            echo "<p>Table Users created successfully</p>" . "<br>";
         } 
         catch(PDOException $e) 
         {
-            echo $sqlQueryCreateTable . "<br>" . $e->getMessage();
+            echo "<p>" . $sqlQueryCreateTable . "<br>" . $e->getMessage() . "</p>";
         }
         //Cerramos la conexión a la base:
         $conn = null;
@@ -107,11 +107,11 @@
 
             //Usamos exec() por que no se returnan resultados:
             $conn->exec($sqlInsertInTable);
-            echo "Usuario admin creado correctamente en la BD";
+            echo "<p>Usuario admin creado correctamente en la BD</p>";
         }
         catch(PDOException $e)
         {
-            echo $sqlInsertInTable . "<br>" . $e->getMessage();
+            echo "<p>" . $sqlInsertInTable . "<br>" . $e->getMessage() . "</p>";
         }
 
         //Por ultimo cerramos la conexion a la BD
