@@ -21,10 +21,17 @@
                 //Se invoca la función session start para registrar cuando se tuvo una sesión correcta: https://www.php.net/manual/en/function.session-start.php 
                 session_start();
 
-                //DECLARAMOS las variables a utilizar para la conexión (Mas a adelante hay que sacar de aqui estos datos)
-                $servername = "localhost";
-                $username = "root";
-                $password = "";
+                // //Entorno DEV-Local
+                // //DECLARAMOS las variables a utilizar para la conexión (Mas a adelante hay que sacar de aqui estos datos)
+                // $servername = "localhost";
+                // $username = "root";
+                // $password = "";
+                // $dbname = "virtuajoint";
+
+                //Entrono DEV-Cloud
+                $servername = "dbs-virtuajoint-dev1.mysql.database.azure.com";
+                $username = "admin5";
+                $password = "Fuco.truco";
                 $dbname = "virtuajoint";
 
 

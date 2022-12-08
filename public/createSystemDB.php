@@ -53,7 +53,7 @@
         } 
         catch(PDOException $e) //Si no pudo, lanza un error en pantalla
         {
-            echo "<p>Error: ". $sql . "<br>" . $e->getMessage() . "</p>";                          
+            echo "<p>Error: ". $sql . "<br>" . $e->getMessage() . "</p><br>";                          
         }
         
         $conn = null;//cerramos la conexion a la bd 
@@ -89,7 +89,7 @@
         } 
         catch(PDOException $e) 
         {
-            echo "<p>" . $sqlQueryCreateTable . "<br>" . $e->getMessage() . "</p>";
+            echo "<p>" . $sqlQueryCreateTable . "<br>" . $e->getMessage() . "</p><br>";
         }
         //Cerramos la conexión a la base:
         $conn = null;
@@ -102,8 +102,8 @@
             // configuramos el modo de error de PDO con una excepecion:
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             //Metemos en una variable el código SQL a ejecutar:
-            $sqlInsertInTable = "INSERT INTO users (userFName, userLName, aliasUser, paisUser, genderUser, emailUser, psswdUser, websiteUser)
-            values ('Super', 'Admin', 'SuperAdmin', 'Mexico', 'Macho', 'email@domain', 'root', 'www.virtuajoint.com.mx')";
+            $sqlInsertInTable = "INSERT INTO users (idUser, userFName, userLName, aliasUser, paisUser, genderUser, emailUser, psswdUser, websiteUser)
+            values (1,'Super', 'Admin', 'SuperAdmin', 'Mexico', 'Macho', 'email@domain', 'root', 'www.virtuajoint.com.mx')";
 
             //Usamos exec() por que no se returnan resultados:
             $conn->exec($sqlInsertInTable);
