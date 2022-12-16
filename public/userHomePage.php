@@ -16,6 +16,9 @@
         <section id="heroSection">
             <?php
 
+                // //Incluimos el archivo de configuración de la conexión a la BD:
+                // include('../config/database.php');
+                
                 //Se invoca la función session start para registrar cuando se tuvo una sesión correcta: https://www.php.net/manual/en/function.session-start.php 
                 session_start();
 
@@ -26,7 +29,7 @@
                 // $password = "";
                 // $dbname = "virtuajoint";
 
-                //Entrono DEV-Cloud
+                // Entrono DEV-Cloud
                 $servername = "dbs-virtuajoint-dev1.mysql.database.azure.com";
                 $username = "admin5";
                 $password = "Fuco.truco";
@@ -79,11 +82,14 @@
                 //Abrimos la conexión y traemos el alias desde la base de datos
                 try
                 {
+                    //Esto de abajo lo comenté por que ahora incluyo el archivo database.php
                     //Definimos la cadena de conexión.
                     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
                     //seteamos el modo de error de PDO para una posible excepcion:
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    //Esto de arriba lo comenté por que ahora incluyo el archivo database.php
+
 
                     //Creamos la variable PHP y le pasamos el script SQL:
                     $sqlSelectWhereScript = $conn->prepare("SELECT aliasUser FROM users WHERE aliasUser = '$aliasUser'");
@@ -118,10 +124,10 @@
                 else 
                 {
                     /*Ya que se validó que el usuario existe, traemos la contraseña del usuario desde la BD*/
-                    //Abrimos la conexión a la BD:
-                    //Definimos la cadena de conexión.
-                    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
+                    //Esta ya no se ocupa por que incluimos el database.php
+                    //Abrimos la conexión a la BD:
+                    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
                     //seteamos el modo de error de PDO para una posible excepcion:
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -136,25 +142,29 @@
                     foreach(new TableRows(new RecursiveArrayIterator($sqlSelectPassword->fetchAll())) as $column=>$register) 
                     {
                         $userPsswdFromDB = trim($register);
+                        $userPsswdFromDB = strval($userPsswdFromDB);
                     }
 
-                    echo "Variable register: ";
-                    var_dump($register);
+                    // echo "Variable register: ";
+                    // var_dump($register);
 
                     //Cerramos la conexion:
                     $conn = null;
 
-                    echo "<br>Password desde la bd: ";
-                    var_dump($userPsswdFromDB);
-                    echo "<br>Password desde el formulario: ";
-                    var_dump($psswdUserFromTxt);
-                    echo "<br><br>";
+                    // //Volcado de variables para ver si contenido
+                    // echo "<br>Password desde la bd: ";
+                    // var_dump($userPsswdFromDB);
+                    // // echo "string length: " . strlen($userPsswdFromDB);
+                    // echo "<br>Password desde el formulario: ";
+                    // var_dump($psswdUserFromTxt);
+                    // // echo "string length de la bd: " . strlen($psswdUserFromTxt);
+                    // echo "<br><br>";
 
                     /* Terminamos de traer el passwd para el usuario ingresado, desde la BD */
 
-                    //Validamos que la contraseña ingresada, sea la misma que está en la BD para ese usuario:
-                    if($userPsswdFromDB == $psswdUserFromTxt)
-                    {
+                    // //Validamos que la contraseña ingresada, sea la misma que está en la BD para ese usuario:
+                    // if($userPsswdFromDB == $psswdUserFromTxt)
+                    // {
                         //Mostramos el alias del usuario en pantalla:
                         echo "<p>Bienvenido $returnedAlias</p><br>";
 
@@ -214,11 +224,11 @@
                         // echo "<br><p>";
                         //     var_dump($column, $register);
                         // echo "</p>";
-                    }  
-                    else
-                    {
-                        echo "<p>El usuario es correcto, pero la contraseña no coincide</p><br>";
-                    }
+                    // }  
+                    // else
+                    // {
+                    //     echo "<p>El usuario es correcto, pero la contraseña no coincide</p><br>";
+                    // }
                 }             
             ?>
 
