@@ -22,6 +22,9 @@
         <h1>Gracias por registrarte <?php echo $_POST["txtFName"]; ?> </h1>
         <h2>Da click en "confirma tu cuenta" en el correo que hemos enviado al email que indicaste: "<?php echo $_POST["txtEmail"]; ?>" </h2>
         <?php
+            // invocamos el archivo de la configuracion de BD
+            include('../config/database.php');
+            
             /*Insertamos los valores del nuevo usuario en la BD de "Virtuajoint", tabla "users" */
 
             // //Entorno DEV-Local
@@ -31,11 +34,11 @@
             // $password = "";
             // $dbname = "virtuajoint";
 
-            //Entrono DEV-Cloud
-            $servername = "dbs-virtuajoint-dev1.mysql.database.azure.com";
-            $username = "admin5";
-            $password = "Fuco.truco";
-            $dbname = "virtuajoint";
+            // //Entrono DEV-Cloud
+            // $servername = "dbs-virtuajoint-dev1.mysql.database.azure.com";
+            // $username = "admin5";
+            // $password = "Fuco.truco";
+            // $dbname = "virtuajoint";
 
             //Traemos los valores de los campos del formulario de registro y los convertimos en variables de php.
             //Antes de convertirlos, los pasamos a la función "test_input" para eliminar caracteres innecesarios y "\" con el fin de mejorar la seguridad
@@ -71,7 +74,7 @@
             //Intentamos abrir la conexión y crear la BD
             try
             {
-                $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+                // $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
                 // set the PDO error mode to exception
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $sql = "INSERT INTO users (userFName, userLName, aliasUser, paisUser, genderUser, emailUser, psswdUser, websiteUser)

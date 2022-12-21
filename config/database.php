@@ -1,9 +1,16 @@
 <?php
 
+    //Ambiente QA en Azure
     define('USER', 'admin5');
     define('PASSWORD', 'Fuco.truco');
     define('HOST', 'dbs-virtuajoint-dev1.mysql.database.azure.com');
     define('DATABASE', 'virtuajoint');
+
+    // // //Ambiente DEV Local
+    // define('USER', 'root');
+    // define('PASSWORD', '');
+    // define('HOST', 'localhost');
+    // define('DATABASE', 'virtuajoint');
 
     try
     {

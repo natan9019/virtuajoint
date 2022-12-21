@@ -7,7 +7,7 @@
     font-family: "Open Sans", sans-serif;
 }
 html {
-    font-size: 62.5%; /*Validar si esto nos funciona*/
+    /* font-size: 62.5%; FIXME  @humberto Hay que cambiar esta propiedad*/
     scroll-behavior: smooth;
     box-sizing: border-box;
 }
@@ -18,11 +18,13 @@ body {
 }
 
 h1 {
-    font-size: 4rem;
+    /* Cambie este valor por px */
+    font-size: 25px;
 }
 
 h2 {
-    font-size: 2rem;
+    /* Cambie este valor por px */
+    font-size: 18px;
 }
 
 p,
