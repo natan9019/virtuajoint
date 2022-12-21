@@ -120,46 +120,21 @@
                 }
                 else 
                 {
-                    /*Ya que se validó que el usuario existe, traemos la contraseña del usuario desde la BD*/
+                    /*Ya que se validó que el usuario existe, validamos la contraseña*/
 
-                    //Esta ya no se ocupa por que incluimos el database.php
-                    //Abrimos la conexión a la BD:
-                    // $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+                    //Traemos todos los valores del alias que coincida con el nombre de usuario ingresado
+                    $sqlSelectUser = $conn->prepare("SELECT * FROM users WHERE aliasUser =:aliasUser");
 
-                    //Preparamos el scrip de sql y lo pasamos a la variable que pasaremos a la funcion execute
-                    // $sqlSelectPassword = $conn->prepare("SELECT psswdUser FROM users WHERE aliasUser = '$aliasUser'");
-                    // $sqlSelectPassword->execute();
-                    
-                    // // set the resulting array to associative
-                    // $result = $sqlSelectWhereScript->setFetchMode(PDO::FETCH_ASSOC);
+                    $sqlSelectUser->bindParam("aliasUser", $aliasUser, PDO::PARAM_STR);
+                    $sqlSelectUser->execute();
 
-                    // //Asignamos el resultado traido de la BD a la variable returnedAlias
-                    // foreach(new TableRows(new RecursiveArrayIterator($sqlSelectPassword->fetchAll())) as $column=>$register) 
-                    // {
-                    //     $userPsswdFromDB = trim($register);
-                    //     $userPsswdFromDB = strval($userPsswdFromDB);
-                    // }
+                    $resultado = $sqlSelectUser->fetch(PDO::FETCH_ASSOC);
 
-                    // echo "Variable register: ";
-                    // var_dump($register);
+                    // echo "<br><p>";var_dump($resultado);echo "</p>";
 
-                    //Cerramos la conexion:
-                    // $conn = null;
-
-                    // //Volcado de variables para ver si contenido
-                    // echo "<br>Password desde la bd: ";
-                    // var_dump($userPsswdFromDB);
-                    // // echo "string length: " . strlen($userPsswdFromDB);
-                    // echo "<br>Password desde el formulario: ";
-                    // var_dump($psswdUserFromTxt);
-                    // // echo "string length de la bd: " . strlen($psswdUserFromTxt);
-                    // echo "<br><br>";
-
-                    /* Terminamos de traer el passwd para el usuario ingresado, desde la BD */
-
-                    // //Validamos que la contraseña ingresada, sea la misma que está en la BD para ese usuario:
-                    // if($userPsswdFromDB == $psswdUserFromTxt)
-                    // {
+                     // //Validamos que la contraseña ingresada, sea la misma que está en la BD para ese usuario:
+                    if(password_verify($psswdUserFromTxt, $resultado['psswdUser']))
+                    {
                         //Mostramos el alias del usuario en pantalla:
                         echo "<p>Bienvenido $returnedAlias</p><br>";
 
@@ -204,9 +179,6 @@
                             echo $sqlSelectScript . "<br><h3>La conexión a la bd falló</h3>" . $e->getMessage();
                         }
 
-                        //Cerramos la conexión al servidor de BD
-                        $conn = null;
-
                         //Cerramos la etiqueta del elemento tabla
                         echo "</table>";
                         
@@ -220,11 +192,11 @@
                         // echo "<br><p>";
                         //     var_dump($column, $register);
                         // echo "</p>";
-                    // }  
-                    // else
-                    // {
-                    //     echo "<p>El usuario es correcto, pero la contraseña no coincide</p><br>";
-                    // }
+                    }  
+                    else
+                    {
+                        echo "<p>ERROR: El usuario es correcto, pero la contraseña no coincide</p><br>";
+                    }
                 }  
                 
                 //Cerramos la conexión al servidor de BD abierta 

@@ -59,8 +59,10 @@
                 $genderUser = test_input($_POST["txtGender"]);
                 $emailUser = test_input($_POST["txtEmail"]);
                 $psswdUser = test_input($_POST["txtPassword"]);
-                $psswdHash = password_hash($psswdUser, PASSWORD_BCRYPT);
                 $websiteUser = test_input($_POST["txtWebsite"]);
+
+                //Generamos el Hash(60 caracteres) con el password ingresado por el usuario
+                $psswdHash = password_hash($psswdUser, PASSWORD_BCRYPT);
             }
 
             //Aqui validamos cada variable con la función test_input
