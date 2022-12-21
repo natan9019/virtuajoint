@@ -59,6 +59,7 @@
                 $genderUser = test_input($_POST["txtGender"]);
                 $emailUser = test_input($_POST["txtEmail"]);
                 $psswdUser = test_input($_POST["txtPassword"]);
+                $psswdHash = password_hash($psswdUser, PASSWORD_BCRYPT);
                 $websiteUser = test_input($_POST["txtWebsite"]);
             }
 
@@ -75,13 +76,14 @@
             try
             {
                 // $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-                // set the PDO error mode to exception
-                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                // // set the PDO error mode to exception
+                // $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $sql = "INSERT INTO users (userFName, userLName, aliasUser, paisUser, genderUser, emailUser, psswdUser, websiteUser)
-                VALUES ('$userFName', '$userLName', '$aliasUser', '$countryUser', '$genderUser', '$emailUser', '$psswdUser', '$websiteUser')";
+                VALUES ('$userFName', '$userLName', '$aliasUser', '$countryUser', '$genderUser', '$emailUser', '$psswdHash', '$websiteUser')";
                 // use exec() because no results are returned
                 $conn->exec($sql);
                 echo "<h3>Registro agregado correctamente<h3>";
+                // echo "<h3>Hash del password: $psswdHash<h3>";
             } 
             catch(PDOException $e) 
             {
