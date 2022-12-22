@@ -22,7 +22,7 @@
         </ul>
     </nav>
 
-    <section class="signupSection mainSection">
+    <section class="signinSection mainSection">
         <h1>Sign In</h1>
         <h2>Crea tu cuenta para usar Virtuajoint</h2>
         <section class="signupSection">

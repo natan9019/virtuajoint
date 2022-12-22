@@ -22,7 +22,7 @@
         </ul>
     </nav>
 
-    <section id="formInitializeContainer" class="mainSection">
+    <section id="formInitializeContainer" class="initializeSection mainSection">
         <h1>Define los siguientes datos y pulsa "Inicializar" para comenzar a usar VirtuaJoint</h1><br>
         <h2>Nota: Deja los valores por default para un entorno local</h2><br>
         <form action="/createSystemDB.php" method="POST">
