@@ -13,14 +13,9 @@
 </head>
 
 <body>
-    <nav class="navbar">
-        <ul class="navbar-menu">
-            <li> <a href="http://virtuajoint.test/">Home</a> </li>
-            <li> <a href="http://virtuajoint.test/login.html">Log In</a> </li>
-            <li> <a href="http://virtuajoint.test/signin.html">Sign In</a> </li>
-            <li> <a href="http://virtuajoint.test/initialize.html">Initialize</a></li>
-        </ul>
-    </nav>
+    <?PHP
+        include('navbarMainMenu.php');
+    ?>
 
     <section id="formInitializeContainer" class="initializeSection mainSection">
         <h1>Define los siguientes datos y pulsa "Inicializar" para comenzar a usar VirtuaJoint</h1><br>

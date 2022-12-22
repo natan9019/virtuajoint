@@ -13,14 +13,9 @@
 </head>
 
 <body>
-    <nav class="navbar">
-        <ul class="navbar-menu">
-            <li> <a href="http://virtuajoint.test/">Home</a> </li>
-            <li> <a href="http://virtuajoint.test/login.html">Log In</a> </li>
-            <li> <a href="http://virtuajoint.test/signin.html">Sign In</a> </li>
-            <li> <a href="http://virtuajoint.test/initialize.html">Initialize</a></li>
-        </ul>
-    </nav>
+    <?PHP
+        include('navbarMainMenu.php');
+    ?>
 
     <section class="loginSection mainSection">
         <h1>Log In</h1>

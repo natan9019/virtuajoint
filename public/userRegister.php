@@ -8,14 +8,9 @@
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <nav class="navbar">
-        <ul class="navbar-menu">
-            <li> <a href="http://virtuajoint.test/">Home</a> </li>
-            <li> <a href="http://virtuajoint.test/login.html">Login</a> </li>
-            <li> <a href="http://virtuajoint.test/signin.html">Sign In</a> </li>
-            <li> <a href="http://virtuajoint.test/initialize.html">Initialize</a></li>
-        </ul>
-    </nav>
+    <?PHP
+        include('navbarMainMenu.php');
+    ?>
     <!-- FIXME El texto para los H2 y el texto sin formato se ve muy pequeño -->
 
     <section class="mainSection">

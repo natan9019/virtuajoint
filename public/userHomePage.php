@@ -6,12 +6,9 @@
     </head>
     <body>
         <section id="navbarSection">
-            <nav class="navbar">
-                <ul class="navbar-menu">
-                    <li> <a href="http://virtuajoint.test/">Home</a> </li>
-                    <li> <a href="http://virtuajoint.test/">Log Out</a> </li>
-                </ul>
-            </nav>
+            <?PHP
+                include('navbarMainMenu.php');
+            ?>
         </section>
         <section id="heroSection">
             <?php

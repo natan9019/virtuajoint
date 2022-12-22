@@ -8,14 +8,9 @@
     <title>Inicializando</title>
 </head>
 <body>
-    <nav class="navbar">
-        <ul class="navbar-menu">
-            <li> <a href="http://virtuajoint.test/">Home</a> </li>
-            <li> <a href="http://virtuajoint.test/login.html">Login</a> </li>
-            <li> <a href="http://virtuajoint.test/signin.html">Sign In</a> </li>
-            <li> <a href="http://virtuajoint.test/initialize.html">Initialize</a></li>
-        </ul>
-    </nav>
+    <?PHP
+        include('navbarMainMenu.php');
+    ?>
     <?php
         //DECLARAMOS las variables a utilizar para la conexión (Mas a adelante hay que sacar de aqui estos datos)
         $servername = $_POST["txtServerName"];
