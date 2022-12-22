@@ -72,9 +72,9 @@
             </form>
         </section>
 
-        <footer class="footer">
-            <p>VirtuaJoint 2022</p>
-        </footer>
+        <?php
+            include('footer.php');
+        ?>
 </body>
 
 </html>

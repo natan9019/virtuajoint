@@ -16,18 +16,18 @@
     <nav class="navbar">
         <ul class="navbar-menu">
             <li> <a href="http://virtuajoint.test/">Home</a> </li>
-            <li> <a href="http://virtuajoint.test/login.html">Log In</a> </li>
-            <li> <a href="http://virtuajoint.test/signin.html">Sign In</a> </li>
-            <li> <a href="http://virtuajoint.test/initialize.html">Initialize</a></li>
+            <li> <a href="http://virtuajoint.test/login.php">Log In</a> </li>
+            <li> <a href="http://virtuajoint.test/signin.php">Sign In</a> </li>
+            <li> <a href="http://virtuajoint.test/initialize.php">Initialize</a></li>
         </ul>
     </nav>
     <section class="heroSection mainSection">
         <h1>Bienvenido a Virtuajoint</h1>
         <p>Virtuajoint te permite gestionar colecciones de lo que quieras</p>
     </section>
-    <footer class="footer">
-        <p>VirtuaJoint 2022</p>
-    </footer>
+    <?php
+        include('footer.php');
+    ?>
 </body>
 
 </html>

@@ -40,11 +40,10 @@
         </form>
         <p>¿Olvidaste tu contraseña? Haz click <a href="" class="link-forgotPassword">aquí</a></p>
     </section>
+    <?php
+        include('footer.php');
+    ?>
 
-
-    <footer class="footer">
-        <p>VirtuaJoint 2022</p>
-    </footer>
 </body>
 
 </html>

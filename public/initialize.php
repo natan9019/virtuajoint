@@ -43,6 +43,9 @@
             <input type="submit" id="btnSubmit" value="Inicializar">
         </form>
     </section>
+    <?php
+        include('footer.php');
+    ?>
 </body>
 
 </html>
