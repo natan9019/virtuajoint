@@ -18,8 +18,7 @@
     ?>
 
     <section class="loginSection mainSection">
-        <h1>Log In</h1>
-        <h2>Ingresa a la plataforma</h2>
+        <h1>Inicia sesión</h1>
         <form action="/userHomePage.php" class="form-login" method="POST">
             <div id="divUserName" class="form-login">
                 <label for="lblUserName">Nombre de Usuario</label>

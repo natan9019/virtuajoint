@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
-    <title>Sign In - VirtuaJoint</title>
+    <title>Registro - VirtuaJoint</title>
 </head>
 
 <body>
@@ -18,8 +18,7 @@
     ?>
 
     <section class="signinSection mainSection">
-        <h1>Sign In</h1>
-        <h2>Crea tu cuenta para usar Virtuajoint</h2>
+        <h1>Crea tu cuenta para usar Virtuajoint</h1>
         <section class="signupSection">
             <form action="/userRegister.php" method="post" class="form-signin">
                 <DIV class="formFieldDiv">
