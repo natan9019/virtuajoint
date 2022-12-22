@@ -130,8 +130,6 @@
 
                     $resultado = $sqlSelectUser->fetch(PDO::FETCH_ASSOC);
 
-                    echo "<br><p>";var_dump($resultado);echo "</p>";
-
                      // //Validamos que la contraseña ingresada, sea la misma que está en la BD para ese usuario:
                     if(password_verify($psswdUserFromTxt, $resultado['psswdUser']))
                     {
