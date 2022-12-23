@@ -75,7 +75,7 @@
                 // $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
                 // // set the PDO error mode to exception
                 // $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $sql = "INSERT INTO users (userFName, userLName, aliasUser, paisUser, genderUser, emailUser, psswdUser, websiteUser)
+                $sql = "INSERT INTO users (userFName, userLName, aliasUser, paisUser, genderUser, emailUser, hashPsswdUser, websiteUser)
                 VALUES ('$userFName', '$userLName', '$aliasUser', '$countryUser', '$genderUser', '$emailUser', '$psswdHash', '$websiteUser')";
                 // use exec() because no results are returned
                 $conn->exec($sql);

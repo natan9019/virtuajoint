@@ -128,7 +128,7 @@
                     $resultado = $sqlSelectUser->fetch(PDO::FETCH_ASSOC);
 
                      // //Validamos que la contraseña ingresada, sea la misma que está en la BD para ese usuario:
-                    if(password_verify($psswdUserFromTxt, $resultado['psswdUser']))
+                    if(password_verify($psswdUserFromTxt, $resultado['hashPsswdUser']))
                     {
                         //Mostramos el alias del usuario en pantalla:
                         echo "<p>Bienvenido $returnedAlias</p><br>";

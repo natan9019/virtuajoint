@@ -17,6 +17,7 @@
         $username = $_POST["txtAdminName"];
         $password = $_POST["txtPassword"];
         $dbname = $_POST["txtDbName"];
+        $psswdSuperAdmin = $_POST["txtPsswdSA"];
  
         /******************************* Creación de la bd***********************/
 
@@ -68,7 +69,7 @@
                 `paisUser` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'Nacionalidad del usuario' COLLATE 'utf8mb4_general_ci',
                 `genderUser` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'Genero del usuario' COLLATE 'utf8mb4_general_ci',
                 `emailUser` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'Correo electronico del usuario' COLLATE 'utf8mb4_general_ci',
-                `psswdUser` VARCHAR(100) NOT NULL DEFAULT '' COMMENT 'Contraseña del usuario' COLLATE 'utf8mb4_general_ci',
+                `hashPsswdUser` VARCHAR(100) NOT NULL DEFAULT '' COMMENT 'Hash de la contraseña del usuario' COLLATE 'utf8mb4_general_ci',
                 `websiteUser` VARCHAR(50) COMMENT 'Sitio web del usuario (OPCIONAL)' COLLATE 'utf8mb4_general_ci',
                 `regDate` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Registro de tiempo de la creación del usuario',
                 PRIMARY KEY (`idUser`) USING BTREE
@@ -89,6 +90,9 @@
         //Cerramos la conexión a la base:
         $conn = null;
 
+        //Generamos el hash de la contraseña del SuperAdmin
+        $psswdHashSA = password_hash($psswdSuperAdmin, PASSWORD_BCRYPT);
+        
         /******************************* Insertamos el usuario superadmin en la tabla usuarios***********************/
         try
         {
@@ -97,8 +101,8 @@
             // configuramos el modo de error de PDO con una excepecion:
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             //Metemos en una variable el código SQL a ejecutar:
-            $sqlInsertInTable = "INSERT INTO users (idUser, userFName, userLName, aliasUser, paisUser, genderUser, emailUser, psswdUser, websiteUser)
-            values (1,'Super', 'Admin', 'SuperAdmin', 'Mexico', 'Macho', 'email@domain', 'root', 'www.virtuajoint.com.mx')";
+            $sqlInsertInTable = "INSERT INTO users (idUser, userFName, userLName, aliasUser, paisUser, genderUser, emailUser, hashPsswdUser, websiteUser)
+            values (1,'Super', 'Admin', 'SuperAdmin', 'Mexico', 'Macho', 'email@domain', '$psswdHashSA', 'www.virtuajoint.com.mx')";
 
             //Usamos exec() por que no se returnan resultados:
             $conn->exec($sqlInsertInTable);
