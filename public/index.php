@@ -16,10 +16,12 @@
     <?PHP
         include('navbarMainMenu.php');
     ?>
-    <section class="heroSection mainSection">
-        <h1>Bienvenido a Virtuajoint</h1>
-        <p>Virtuajoint te permite gestionar colecciones de lo que quieras</p>
-    </section>
+    <div class="mainContent">
+        <section class="heroSection">
+            <h1>Bienvenido a Virtuajoint</h1>
+            <p>Virtuajoint te permite gestionar colecciones de lo que quieras</p>
+        </section>
+    </div>
     <?php
         include('footer.php');
     ?>

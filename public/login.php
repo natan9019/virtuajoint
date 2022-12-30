@@ -16,24 +16,25 @@
     <?PHP
         include('navbarMainMenu.php');
     ?>
-
-    <section class="loginSection mainSection">
-        <h1>Inicia sesión</h1>
-        <form action="/userHomePage.php" class="form-login" method="POST">
-            <div id="divUserName" class="form-login">
-                <label for="lblUserName">Nombre de Usuario</label>
-                <input type="text" id="txtUserName" name="txtUserName" required>
-            </div>
-            <div id="divPsswd" class="form-login">
-                <label for="lblPsswd">Contraseña</label>
-                <input type="password" id="txtPsswd" name="txtPsswd" required>
-            </div>
-            <div id="divSubmit" class="form-login">
-                <input type="submit" value="Ingresar">
-            </div>
-        </form>
-        <p>¿Olvidaste tu contraseña? Haz click <a href="" class="link-forgotPassword">aquí</a></p>
-    </section>
+    <div class="mainContent">
+        <section class="mainSection loginSection">
+            <h1>Inicia sesión</h1>
+            <form action="/userHomePage.php" class="form-login" method="POST">
+                <div id="divUserName" class="form-input">
+                    <label for="lblUserName">Nombre de Usuario</label>
+                    <input type="text" id="txtUserName" name="txtUserName" required>
+                </div>
+                <div id="divPsswd" class="form-input">
+                    <label for="lblPsswd">Contraseña</label>
+                    <input type="password" id="txtPsswd" name="txtPsswd" required>
+                </div>
+                <div id="divSubmit" class="form-input">
+                    <input type="submit" value="Ingresar">
+                </div>
+            </form>
+            <p>¿Olvidaste tu contraseña? Haz click <a href="" class="link-forgotPassword">aquí</a></p>
+        </section>  
+    </div>
     <?php
         include('footer.php');
     ?>
