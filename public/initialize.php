@@ -18,29 +18,37 @@
     ?>
 
     <section id="formInitializeContainer" class="initializeSection mainSection">
-        <h1>Ingresa los siguientes datos y pulsa "Inicializar" para comenzar a usar VirtuaJoint</h1><br>
+        <h1>Vamos a inicializar el sistema VirtuaJoint</h1><br>
         <h2>Nota: Deja los valores por default para un entorno local</h2><br>
         <form action="/createSystemDB.php" method="POST">
 
-            <label for="lblServerName">Nombre del servidor de BD</label><br>
-            <input type="text" id="txtServerName" name="txtServerName" value="localhost"><br>
+            <fieldset>
+                <legend>Conexión al servidor de base de datos</legend>
+                <label for="lblServerName">Nombre del servidor</label><br>
+                <input type="text" id="txtServerName" name="txtServerName" value="localhost"><br>
+    
+                <label for="lblAdminName">Usuario administrador del servidor</label><br>
+                <input type="text" id="txtAdminName" name="txtAdminName" value="root"><br>
+    
+                <label for="lblPassword">Contraseña de la cuenta del administrador del servidor</label><br>
+                <input type="password" id="txtPassword" name="txtPassword"><br>
 
-            <label for="lblAdminName">Usuario administrador de la BD</label><br>
-            <input type="text" id="txtAdminName" name="txtAdminName" value="root"><br>
+                <label for="lblDbName">Nombre de la base de datos del sistema</label><br>
+                <input type="text" id="txtDbName" name="txtDbName" value="virtuajoint" readonly="readonly"><br>
+            </fieldset>
 
-            <label for="lblPassword">Contraseña de la cuenta administrador de BD</label><br>
-            <input type="password" id="txtPassword" name="txtPassword"><br>
+            <fieldset>
+                <legend>Alta del administrador del sistema</legend>
 
-            <label for="lblDbName">Nombre de la base de datos del sistema</label><br>
-            <input type="text" id="txtDbName" name="txtDbName" value="virtuajoint" readonly="readonly"><br>
+                <label for="lblSuperAdmin">Usuario administrador del sistema</label><br>
+                <input type="text" id="txtSuperadmin" name="txtSuperadmin" readonly="readonly" value="SuperAdmin"><br>
+    
+                <label for="lblPsswdSA">Contraseña del SuperAdmin del sistema</label><br>
+                <input type="password" id="txtPsswdSA" name="txtPsswdSA"><br>
+    
+                <input type="submit" id="btnSubmit" value="Inicializar">
+            </fieldset>
 
-            <label for="lblSuperAdmin">Usuario administrador del sistema</label><br>
-            <input type="text" id="txtSuperadmin" name="txtSuperadmin" readonly="readonly" value="SuperAdmin"><br>
-
-            <label for="lblPsswdSA">Contraseña del SuperAdmin del sistema</label><br>
-            <input type="password" id="txtPsswdSA" name="txtPsswdSA"><br>
-
-            <input type="submit" id="btnSubmit" value="Inicializar">
         </form>
     </section>
     <?php
