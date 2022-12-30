@@ -16,48 +16,52 @@
     <?PHP
         include('navbarMainMenu.php');
     ?>
+    <div class="mainContent">
+        <section id="formInitializeContainer" class="initializeSection">
+            <div class="initialize-instrucciones">
+                <h1>Vamos a inicializar el sistema VirtuaJoint</h1>
+                <h2>Nota: Deja los valores por default para un entorno local</h2>
+            </div>
 
-    <section id="formInitializeContainer" class="initializeSection mainSection">
-        <h1>Vamos a inicializar el sistema VirtuaJoint</h1><br>
-        <h2>Nota: Deja los valores por default para un entorno local</h2><br>
-        <form action="/createSystemDB.php" method="POST">
-            <fieldset>
-                <legend>Conexión al servidor de base de datos</legend>
-                <label for="lblServerName">Selecciona un servidor:</label>
-                <!-- <input type="text" id="txtServerName" name="txtServerName" value="localhost"><br> -->
-                <select id="txtServerName" name="txtServerName" >
-                    <option value="localhost">localhost</option>
-                    <option value="dbs-virtuajoint-dev1.mysql.database.azure.com">Azure</option>
-                </select><br>
-    
-                <label for="lblAdminName">Usuario administrador del servidor: </label>
-                <!-- <input type="text" id="txtAdminName" name="txtAdminName" value="root"><br> -->
-                <select name="txtAdminName" id="txtAdminName">
-                    <option value="root">root</option>
-                    <option value="admin5">admin5</option>
-                </select><br>
+            <form action="/createSystemDB.php" method="POST" class="form-initialize">
+                <fieldset class="fieldset-initialize">
+                    <legend>Conexión al servidor de base de datos</legend>
+                    <label for="lblServerName">Selecciona un servidor:</label>
+                    <!-- <input type="text" id="txtServerName" name="txtServerName" value="localhost"><br> -->
+                    <select id="txtServerName" name="txtServerName" >
+                        <option value="localhost">localhost</option>
+                        <option value="dbs-virtuajoint-dev1.mysql.database.azure.com">Azure</option>
+                    </select>
+                    
+                    <label for="lblAdminName">Usuario administrador del servidor: </label>
+                    <!-- <input type="text" id="txtAdminName" name="txtAdminName" value="root"><br> -->
+                    <select name="txtAdminName" id="txtAdminName">
+                        <option value="root">root</option>
+                        <option value="admin5">admin5</option>
+                    </select>
+                    
+                    <label for="lblPassword">Contraseña de la cuenta del administrador del servidor: </label>
+                    <input type="password" id="txtPassword" name="txtPassword">
+
+                    <label for="lblDbName">Nombre de la base de datos del sistema</label>
+                    <input type="text" id="txtDbName" name="txtDbName" value="virtuajoint" readonly="readonly">
+                </fieldset>
                 
-                <label for="lblPassword">Contraseña de la cuenta del administrador del servidor: </label>
-                <input type="password" id="txtPassword" name="txtPassword"><br>
-
-                <label for="lblDbName">Nombre de la base de datos del sistema</label><br>
-                <input type="text" id="txtDbName" name="txtDbName" value="virtuajoint" readonly="readonly"><br>
-            </fieldset>
-
-            <fieldset>
-                <legend>Alta del administrador del sistema</legend>
-
-                <label for="lblSuperAdmin">Usuario administrador del sistema</label><br>
-                <input type="text" id="txtSuperadmin" name="txtSuperadmin" readonly="readonly" value="SuperAdmin"><br>
-    
-                <label for="lblPsswdSA">Contraseña del SuperAdmin del sistema</label><br>
-                <input type="password" id="txtPsswdSA" name="txtPsswdSA" required><br>
-    
-                <input type="submit" id="btnSubmit" value="Inicializar">
-            </fieldset>
-
-        </form>
-    </section>
+                <fieldset class="fieldset-initialize">
+                    <legend>Alta del administrador del sistema</legend>
+                    
+                    <label for="lblSuperAdmin">Usuario administrador del sistema</label>
+                    <input type="text" id="txtSuperadmin" name="txtSuperadmin" readonly="readonly" value="SuperAdmin">
+                    
+                    <label for="lblPsswdSA">Contraseña del SuperAdmin del sistema</label>
+                    <input type="password" id="txtPsswdSA" name="txtPsswdSA" required>
+                    
+                    <input type="submit" id="btnSubmit" value="Inicializar">
+                </fieldset>
+            
+            </form>
+        </section>
+    </div>
     <?php
         include('footer.php');
     ?>

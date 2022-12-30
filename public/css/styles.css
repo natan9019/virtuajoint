@@ -27,6 +27,7 @@ h1 {
 
 h2 {
     font-size: 3rem;
+    text-align: center;
 }
 
 h3 {
@@ -114,6 +115,30 @@ input[type="submit"] {
 .form-signin p {
     font-size: 1.5rem;
     text-align: center;
+}
+
+.initializeSection {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.form-initialize {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+}
+
+.fieldset-initialize {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 70%;
+    padding: 3rem 0;
 }
 
 .footer {
