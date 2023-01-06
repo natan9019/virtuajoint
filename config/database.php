@@ -6,7 +6,7 @@
     // define('HOST', 'dbs-virtuajoint-dev1.mysql.database.azure.com');
     // define('DATABASE', 'virtuajoint');
 
-    // // //Ambiente DEV Local
+    // // // //Ambiente DEV Local
     define('USER', 'root');
     define('PASSWORD', '');
     define('HOST', 'localhost');
