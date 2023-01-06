@@ -4,141 +4,148 @@
     box-sizing: inherit;
     text-decoration: none;
     list-style: none;
-    font-family: "Open Sans", sans-serif;
-    font-size: 18px;
+    font-size: 2rem;
 }
 
 html {
-    min-height: 100%;
-    position: relative;
+    font-size: 62.5%;
     scroll-behavior: smooth;
     box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
-    font-size: 30px;
+    text-align: center;
+    font-size: 3.2rem;
 }
 
 h2 {
-    font-size: 26px;
+    font-size: 3rem;
+    text-align: center;
 }
 
-h3,
+h3 {
+    font-size: 2.8rem;
+}
+
 input {
-    font-size: 22px;
+    padding: 1rem;
+    font-size: 1.8rem;
+    border: 1px solid grey;
+    border-radius: 0.3rem;
 }
 
-p,
-label,
-a {
-    font-size: 18px;
+input[type="submit"] {
+    cursor: pointer;
+}
+
+.div-nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .navbar {
-    display: flex;
-    justify-content: end;
-    text-align: center;
-    padding: 50px 50px 0px 0px;
-    margin-bottom: 50px;
+    padding: 5rem;
 }
 
-.navbar-menu {
+.navbar-list {
     display: flex;
-    gap: 50px;
+    gap: 4rem;
+}
+
+.mainContent {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .mainSection {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 100%;
+    text-align: center;
 }
 
-.heroSection,
 .loginSection,
-.signinSection,
-.initializeSection {
-    height: 80vh;
+.signinSection {
+    gap: 3rem;
 }
 
-.loginSection form,
-.signupSection form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 50px;
-}
-
-.form-login {
-    display: flex;
-    flex-direction: column;
-}
-
-/* FIXME @HUMBERTO Modifiqué momentaneamente este estilo para acomodar el formulario */
+.form-login,
 .form-signin {
-    display: grid;
-    flex-direction: row;
-    /* gap: 5rem;
-    padding: 5rem; */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
 }
 
-form input {
-    margin-bottom: 0;
-    padding: 5px;
-}
-
-input[type="submit"] {
-    cursor: pointer;
-    margin-top: 0;
-}
-
-.form-div {
+.form-input {
     display: flex;
     flex-direction: column;
 }
 
 .link-forgotPassword {
-    color: blue;
     text-decoration: underline;
+    color: red;
+}
+
+.asterisk {
+    color: red;
+}
+
+.form-signin label {
+    display: inline-block;
+    width: 13rem;
+    text-align: right;
+}
+
+.formFieldDiv:has(input:required) label:before {
+    content: "*";
+    color: red;
+}
+
+.form-signin p {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.initializeSection {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.form-initialize {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+}
+
+.fieldset-initialize {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 70%;
+    padding: 3rem 0;
 }
 
 .footer {
-    position: absolute;
-    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    min-height: 10rem;
     text-align: center;
-    padding: 20px;
-}
-
-@media (max-width: 900px) {
-    form {
-        flex-direction: column;
-        gap: 0;
-    }
-
-    .navbar {
-        justify-content: center;
-    }
-
-    .mainSection {
-        margin-top: 5rem;
-    }
-
-    .hero {
-        height: 50vh;
-    }
-
-    .navbar-menu {
-        flex-direction: column;
-    }
-
-    .footer {
-        position: relative;
-        margin-top: 10rem;
-    }
-}
-
-span.asterisk {
-    color: crimson;
 }
