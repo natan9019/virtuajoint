@@ -10,6 +10,7 @@
 <body>
     <?PHP
         include('navbarMainMenu.php');
+        include('footer.php');
     ?>
 </body>
 </html>

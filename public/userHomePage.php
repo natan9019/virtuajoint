@@ -9,6 +9,7 @@
             <?PHP
                 include('navbarMainMenu.php');
                 include('sideBarMenu.php');
+                
             ?>
         </section>
         <section id="heroSection">
@@ -201,5 +202,10 @@
             ?>
 
         </section>
+        <?php
+            include('footer.php');
+        ?>
+        
+
     </body>
 </html>
