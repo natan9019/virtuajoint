@@ -10,6 +10,12 @@
 <body>
     <?PHP
         include('navbarMainMenu.php');
+        include('sidebarMenu.php');
+    ?>
+
+
+
+    <?PHP
         include('footer.php');
     ?>
 </body>
