@@ -1,19 +1,19 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
     text-decoration: none;
     list-style: none;
     font-size: 2rem;
-}
+} */
 
-html {
+/* html {
     font-size: 62.5%;
     scroll-behavior: smooth;
     box-sizing: border-box;
     font-family: "Open Sans", sans-serif;
-}
-
+} */
+/* 
 body {
     min-height: 100vh;
     display: flex;
@@ -49,16 +49,8 @@ input[type="submit"] {
     width: 100%;
     display: flex;
     justify-content: flex-end;
-}
-
-.navbar {
-    padding: 5rem;
-}
-
-.navbar-list {
-    display: flex;
-    gap: 4rem;
-}
+} */
+/* 
 
 .mainContent {
     flex: 1;
@@ -148,4 +140,146 @@ input[type="submit"] {
     width: 100%;
     min-height: 10rem;
     text-align: center;
+} */
+
+.navbar {
+    overflow: hidden;
+    background-color: #333; 
+    margin-left: 160px;
+    display: flex;
+    justify-content:flex-end;
+  }
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: rgba(194, 207, 198, 0.484);
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+/* Background color de los elementos hijo del navbar */
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: rgba(27, 71, 41, 0.735);
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: flex;
+  justify-content: end;
+}
+
+
+.sidebar {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 16px;
+  font-family: "Lato", sans-serif;
+}
+
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Color del hover sobre los items padre del navbar */
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: rgba(194, 207, 198, 0.484);
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: flex;
+}
+
+
+.sidebar a 
+{
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
 }

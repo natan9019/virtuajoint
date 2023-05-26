@@ -3,23 +3,23 @@
     <head>
         <title>Mi portal - Virtuajoint</title>
         <link rel="stylesheet" href="./css/styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <section id="navbarSection">
             <?PHP
                 include('navbarMainMenu.php');
-                include('sideBarMenu.php');
-                
-            ?>
+                ?>
         </section>
-        <section id="heroSection">
+
+        <section id="heroSection" class="main">
             <?php
 
                 // invocamos el archivo de la configuracion de BD
                 include('../config/database.php');
                 
                 //Se invoca la función session start para registrar cuando se tuvo una sesión correcta: https://www.php.net/manual/en/function.session-start.php 
-                session_start();
+                // session_start();
 
                 // //Entorno DEV-Local
                 // //DECLARAMOS las variables a utilizar para la conexión (Mas a adelante hay que sacar de aqui estos datos)
