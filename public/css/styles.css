@@ -217,6 +217,7 @@ input[type="submit"] {
   overflow-x: hidden;
   padding-top: 16px;
   font-family: "Lato", sans-serif;
+  padding-top: 47px;
 }
 
 .sidebar a {

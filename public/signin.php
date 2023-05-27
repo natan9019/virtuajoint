@@ -18,7 +18,7 @@
         include('navbarMainMenu.php');
     ?>
 
-    <div class="mainContent">
+    <div class="main">
         <section class="signinSection mainSection">
             <h1>Crea tu cuenta para usar Virtuajoint</h1>
             <form action="/userRegister.php" method="post" class="form-signin">

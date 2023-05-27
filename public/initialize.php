@@ -17,7 +17,7 @@
     <?PHP
         include('navbarMainMenu.php');
     ?>
-    <div class="mainContent">
+    <div class="main">
         <section id="formInitializeContainer" class="initializeSection">
             <div class="initialize-instrucciones">
                 <h1>Vamos a inicializar el sistema VirtuaJoint</h1>

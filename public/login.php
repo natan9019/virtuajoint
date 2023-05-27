@@ -17,7 +17,7 @@
     <?PHP
         include('navbarMainMenu.php');
     ?>
-    <div class="mainContent">
+    <div class="main">
         <section class="mainSection loginSection">
             <h1>Inicia sesión</h1>
             <form action="/userHomePage.php" class="form-login" method="POST">

@@ -14,13 +14,15 @@
 </head>
 
 <body>
+
     <?PHP
         include('navbarMainMenu.php');
+        
     ?>
-    <div class="mainContent">
+    <div class="main">
         <section class="heroSection">
             <h1>Bienvenido a Virtuajoint</h1>
-            <p>Virtuajoint te permite gestionar colecciones de lo que quieras</p>
+            <p>Virtuajoint te permite gestionar tu colección de HotWheels</p>
         </section>
     </div>
     <?php
