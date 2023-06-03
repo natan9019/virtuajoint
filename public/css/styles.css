@@ -131,7 +131,7 @@ input[type="submit"] {
     gap: 1rem;
     width: 70%;
     padding: 3rem 0;
-}
+}*/
 
 .footer {
     display: flex;
@@ -140,12 +140,11 @@ input[type="submit"] {
     width: 100%;
     min-height: 10rem;
     text-align: center;
-} */
+} 
 
 .navbar {
     overflow: hidden;
     background-color: #333; 
-    margin-left: 160px;
     display: flex;
     justify-content:flex-end;
   }
