@@ -238,10 +238,6 @@ input[type="submit"] {
   .sidebar a {font-size: 18px;}
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
 
 /* Color del hover sobre los items padre del navbar */
 .navbar a:hover, .subnav:hover .subnavbtn {
@@ -283,3 +279,4 @@ body {
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
 }
+
