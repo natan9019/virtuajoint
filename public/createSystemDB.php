@@ -143,6 +143,30 @@
         }
         //Cerramos la conexión a la base:
         $conn = null;
+
+        /******************************* Insertamos los paises en la tabla Paises***********************/
+        try
+        {
+            //Abrimos la conexión usando PDO y le pasamos los parametros:
+            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+            // configuramos el modo de error de PDO con una excepecion:
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            //Metemos en una variable el código SQL a ejecutar:
+            $sqlInsertInTable = "INSERT INTO Paises (nombrePais) values ('PaisTest');
+            INSERT INTO Paises (nombrePais) VALUES ('t2');
+            INSERT INTO Paises (nombrePais) VALUES ('t3');
+            ";
+            //Usamos exec() por que no se returnan resultados:
+            $conn->exec($sqlInsertInTable);
+            echo "<p>Paises iniciales insertados correctamente</p>";
+        }
+        catch(PDOException $e)
+        {
+            echo "<p>" . $sqlInsertInTable . "<br>" . $e->getMessage() . "</p>";
+        }
+
+        //Por ultimo cerramos la conexion a la BD
+        $conn =null;
     ?>
 
     
