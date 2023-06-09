@@ -115,6 +115,34 @@
 
         //Por ultimo cerramos la conexion a la BD
         $conn =null;
+
+        /******************************* Creación de la tabla países***********************/
+        try 
+        {
+            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+            // set the PDO error mode to exception
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            // sql to create table
+            $sqlQueryCreateTable = "CREATE TABLE `Paises` (
+                `idPais` INT(3) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Id autoincremental del país',
+                `nombrePais` VARCHAR(60) NOT NULL DEFAULT '' COMMENT 'Nombre del pais' COLLATE 'utf8mb4_general_ci',
+                PRIMARY KEY (`idPais`) USING BTREE
+            )
+            COMMENT='Paises registrados'
+            COLLATE='utf8mb4_general_ci'
+            ENGINE=InnoDB
+            AUTO_INCREMENT=0";
+
+            // use exec() because no results are returned
+            $conn->exec($sqlQueryCreateTable);
+            echo "<p>Table Paises created successfully</p>" . "<br>";
+        } 
+        catch(PDOException $e) 
+        {
+            echo "<p>" . $sqlQueryCreateTable . "<br>" . $e->getMessage() . "</p><br>";
+        }
+        //Cerramos la conexión a la base:
+        $conn = null;
     ?>
 
     

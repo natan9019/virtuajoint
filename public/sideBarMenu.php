@@ -3,22 +3,21 @@
     <div class="w3-sidebar w3-light-grey w3-card-4 w3-animate-left" style="width: 180px; display: block;" id="mySidebar">
         <div class="w3-bar w3-dark-grey">
             <span class="w3-bar-item w3-padding-16">Menú</span>
-            <button onclick="w3_close()" class="w3-bar-item w3-button w3-right w3-padding-16" title="close Sidebar">x</button>
+            <button onclick="w3_close()" class="w3-bar-item w3-button w3-right w3-padding-16" title="close Sidebar">X</button>
         </div>
 
         <div class="w3-bar-block">
-            <a class="w3-bar-item w3-button w3-green" href="masterCatalogue.php">Catálogo Maestro</a>
+            <div class="w3-dropdown-hover w3-green">
+                <a class="w3-button" href="masterCatalogue.php">Catálogo Maestro <i class="fa fa-caret-down"></i></a>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                    <a class="w3-bar-item w3-button" href="abcPaises.php">ABC Paises</a>
+                    <a class="w3-bar-item w3-button" href="javascript:void(0)">Link 2</a>
+                    <a class="w3-bar-item w3-button" href="javascript:void(0)">Link 3</a>
+                </div>
+            </div>
             <a class="w3-bar-item w3-button" href="javascript:void(0)">About</a>
             <a class="w3-bar-item w3-button" href="javascript:void(0)">Contact</a>
-                <div class="w3-dropdown-hover">
-                    <a class="w3-button" href="javascript:void(0)">Dropdown <i class="fa fa-caret-down"></i></a>
-                    <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                        <a class="w3-bar-item w3-button" href="javascript:void(0)">Link 1</a>
-                        <a class="w3-bar-item w3-button" href="javascript:void(0)">Link 2</a>
-                        <a class="w3-bar-item w3-button" href="javascript:void(0)">Link 3</a>
-                    </div>
-                </div>
-                <a class="w3-bar-item w3-button" href="javascript:void(0)">Support</a>
+            <a class="w3-bar-item w3-button" href="javascript:void(0)">Support</a>
         </div>
     </div>
 
