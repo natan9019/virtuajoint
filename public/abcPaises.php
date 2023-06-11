@@ -13,7 +13,6 @@
     <?PHP
         include('navbarMainMenu.php');
         include('sideBarMenu.php');
-        include('../config/database.php');
     ?>
     <div class="main" id="main" style="margin-left: 180px;">
         <div class="w3-container" style="display: initial;">
@@ -21,7 +20,7 @@
             <h3 class="h3" >Altas, bajas y cambios de Países</h3>
             <fieldset>
                 <p>Consulta de países:</p>
-                <form action="http://virtuajoint.test/abcPaises.php" class="form-login" method="POST">
+                <form action="http://virtuajoint.test/consultaPaises.php" class="form-login" method="POST">
                     <div id="divSubmit" class="form-input">
                         <input type="submit" value="Consultar">
                     </div>

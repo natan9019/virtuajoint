@@ -18,8 +18,7 @@
         <div class="main" id="main" style="margin-left: 180px;">
             <div class="w3-container" style="display: initial;">
                 <span title="open Sidebar" style="display: none; color:aqua;" id="openNav" class="w3-button w3-transparent w3-display-topleft w3-xlarge" onclick="w3_open()">☰</span>
-                <h3 class="h3" >Catálogo Maestro</h3>
-                <p>En esta sección podrás dar de alta los elementos para los combo Box en la interfaz de ABC</p>
+                <h3 class="h3" >Mi portal</h3>
                 <?PHP
                     //Se invoca la función session start para registrar cuando se tuvo una sesión correcta: https://www.php.net/manual/en/function.session-start.php 
                     // session_start();
@@ -42,7 +41,7 @@
                     function test_input($data)
                     {
                         $data = trim($data);
-                        $data = stripslashes($data);
+                        $data = stripslashes($data); 
                         $data = htmlspecialchars($data);
                         return $data;
                     }
