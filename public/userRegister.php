@@ -11,7 +11,7 @@
     <?PHP
         include('navbarMainMenu.php');
     ?>
-    <!-- FIXME El texto para los H2 y el texto sin formato se ve muy pequeño -->
+
 
     <section class="mainSection">
         <h1>Gracias por registrarte <?php echo $_POST["txtFName"]; ?> </h1>

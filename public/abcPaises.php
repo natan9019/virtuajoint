@@ -28,10 +28,10 @@
             </fieldset>
             <fieldset>
                 <p>Alta de países:</p>
-                <form action="http://virtuajoint.test/abcPaises.php" class="form-login" method="POST">
+                <form action="http://virtuajoint.test/altaPaises.php" class="form-login" method="POST">
                     <div id="divNombrePais" class="form-input">
                         <label for="lblNombrePaise">Nombre del País</label>
-                        <input type="text" id="txtNombrePais" name="txtNombrePais" required>
+                        <input type="text" id="txtNombrePais" name="txtNombrePaisAlta" required>
                     </div>
                     <div id="divSubmit" class="form-input">
                         <input type="submit" value="Guardar">
@@ -40,13 +40,13 @@
             </fieldset>
             <fieldset>
                 <p>Baja de países:</p>
-                <form action="http://virtuajoint.test/abcPaises.php" class="form-login" method="POST">
+                <form action="http://virtuajoint.test/bajaPaises.php" class="form-login" method="POST">
                     <div id="divNombrePais" class="form-input">
                         <label for="lblNombrePaise">Nombre del País</label>
-                        <input type="text" id="txtNombrePais" name="txtNombrePais" required>
+                        <input type="text" id="txtNombrePais" name="txtNombrePaisBaja" required>
                     </div>
                     <div id="divSubmit" class="form-input">
-                        <input type="submit" value="Guardar">
+                        <input type="submit" value="Eliminar">
                     </div>
                 </form>
             </fieldset>

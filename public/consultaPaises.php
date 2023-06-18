@@ -22,7 +22,7 @@
                 include('../config/database.php');
                 //Cuando se invoca esta clase renderiza la tabla en pantalla con los registros encontrados en la BD
 
-                echo "<table style='border: solid 1px black;'>";
+                echo "<table style='border: solid 2px black;'>";
                 echo "<tr><th>Id</th><th>Pais</th></tr>";
                 class TableRows extends RecursiveIteratorIterator 
                 {
@@ -31,7 +31,7 @@
                     }
 
                     function current() {
-                        return "<td style='width:150px;border:1px solid black;'>" . parent::current(). "</td>";
+                        return "<td style='width:75px;border:1px solid black;'>" . parent::current(). "</td>";
                     }
 
                     function beginChildren() {
