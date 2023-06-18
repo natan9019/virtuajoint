@@ -12,14 +12,18 @@
     <?PHP
         include('navbarMainMenu.php');
         include('sideBarMenu.php');
-        include('../config/database.php');
+        
     ?>
     <div class="main" id="main" style="margin-left: 180px;">
         <div class="w3-container" style="display: initial;">
             <span title="open Sidebar" style="display: none; color:aqua;" id="openNav" class="w3-button w3-transparent w3-display-topleft w3-xlarge" onclick="w3_open()">☰</span>
             <h3 class="h3" >Consultar Paises</h3>
             <?PHP
+                include('../config/database.php');
                 //Cuando se invoca esta clase renderiza la tabla en pantalla con los registros encontrados en la BD
+
+                echo "<table style='border: solid 1px black;'>";
+                echo "<tr><th>Id</th><th>Pais</th></tr>";
                 class TableRows extends RecursiveIteratorIterator 
                 {
                     function __construct($it) {
@@ -38,6 +42,25 @@
                         echo "</tr>" . "\n";
                     }
                 }
+
+                try {
+                    
+                    $stmt = $conn->prepare("SELECT idPais, nombrePais FROM paises");
+                    $stmt->execute();
+                
+                    // set the resulting array to associative
+                    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                
+                    foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
+                        echo $v;
+                    }
+                }
+                catch(PDOException $e) {
+                    echo "Error: " . $e->getMessage();
+                }
+                $conn = null;
+                echo "</table>";
+                
                 include('footer.php');
             ?>
         </div>
