@@ -1,0 +1,1 @@
+INSERT INTO `virtuajoint`.`ColoresPorAuto` (`idColoresPorAuto`, `colorCarroceriaPrincipal`, `colorCarroceriaSecundario`, `colorCarroceriaTerciario`, `colorBase`, `colorInteriores`, `colorVidrios`) VALUES (1, 2, 10, 14, 15, 15, 15);

@@ -1,0 +1,1 @@
+INSERT INTO `virtuajoint`.`autos` (`idAutos`, `fechaCompra`, `precioCompra`, `idLugarCompra`, `idModeloAuto`, `idColoresXAuto`) VALUES (1, '2017-10-28', 21.6, 7, 116, 1);
