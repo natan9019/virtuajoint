@@ -1,242 +1,242 @@
-idModelos,nombreModelo,añoModelo,idMarcaJuguetera,idMarcaArmadora
-1,Pendiente,0000,1,1
-2,934.5,2016,1,1
-3,"2 Jet Z",1901,1,1
-4,"240 Drift Wagon",1901,1,1
-5,"356B Convertible",1901,1,1
-6,370Z,2010,1,1
-7,"5 Alarm",1901,1,1
-8,599XX,2009,1,1
-9,"718 Boxster",2016,1,1
-10,"8C Competizione",2007,1,1
-11,"911 GT-2",2010,1,1
-12,"911 Rally",1985,1,1
-13,917LH,1901,1,1
-14,"918 Spyder",2013,1,1
-15,"Acre Maker",1901,1,1
-16,Airuption,2022,1,1
-17,"Alpine A110",2017,1,1
-18,"AMG GT",2014,1,1
-19,"Aristo Rat",1901,1,1
-20,"Aventador J",2012,1,1
-21,"Baja Bandit",1901,1,1
-22,"Baja Bone Shaker",1901,1,1
-23,Ballistik,2002,1,1
-24,"Barracuda Formula S",1901,1,1
-25,"Beat All",1901,1,1
-26,"Bel Air",1957,1,1
-27,Bentayga,1901,1,1
-28,"Blastous Moto",1901,1,1
-29,Bogzilla,1901,1,1
-30,"Bot Wheels",2018,1,1
-31,"Bricking Speed",1901,1,1
-32,"Bricking Trails",2022,1,1
-33,Bronco,2021,1,1
-34,"Bump Around",2017,1,1
-35,"C4 Cactus",2018,1,1
-36,Camaro,1981,1,1
-37,"Camaro Custom",2011,1,1
-38,"Camaro SS",2016,1,1
-39,Carbonator,1901,1,1
-40,"Carrera GT",2003,1,1
-41,Charger,1969,1,1
-42,Charger,1971,1,1
-43,"Chevelle SS 396 '67",1967,1,1
-44,"Chevy Nova '66",1966,1,1
-45,Chiron,2016,1,1
-46,"Chow Mobile",2014,1,1
-47,"City Turbo II",1985,1,1
-48,"Civic Custom",1901,1,1
-49,"Civic EF",1990,1,1
-50,"Classic 55 Nomad",1955,1,1
-51,"Clear Speeder",2021,1,1
-52,"Cliff Hanger",2010,1,1
-53,"Cloud Cutter",1901,1,1
-54,"Cobra 427 S/C",1901,1,1
-55,"Colorado Xtreme",1901,1,1
-56,Continental,1901,1,1
-57,Corvette,1955,1,1
-58,"Corvette C6R",1901,1,1
-59,"Corvette C7 Z06",2016,1,1
-60,"Corvette C7 Z06 Convertible",2017,1,1
-61,"Corvette C7.R",2014,1,1
-62,"Corvette Gasser",1962,1,1
-63,"Corvette Racer",1969,1,1
-64,"Corvette Stingray",2014,1,1
-65,"Cosmic Coupe",1901,1,1
-66,"Count Muscula",1901,1,1
-67,"Crop Master",1901,1,1
-68,CR-X,1985,1,1
-69,CR-X,1988,1,1
-70,"CTS Coupe",1901,1,1
-71,"Custom '18 Mustang GT",2018,1,1
-72,"Custom Datsun 240Z",1973,1,1
-73,"Custom Small Block",1901,1,1
-74,CX-5,1901,1,1
-75,Cybertruck,1901,1,1
-76,"Darth Vader",2014,1,1
-77,DAVancenator,1901,1,1
-78,DB10,2014,1,1
-79,DB5,1963,1,1
-80,DBS,2010,1,1
-81,"Deora III",2018,1,1
-82,"Diaper Dragger",1901,1,1
-83,"Dimachinni Veloce",1901,1,1
-84,"Dino 246 GTS",1968,1,1
-85,"Draggin Tail",2009,1,1
-86,Dragster,1994,1,1
-87,"Dune Crusher",1901,1,1
-88,Dune-A-Soar,1901,1,1
-89,"Eevil Weevil",1901,1,1
-90,"El Camino 71",1971,1,1
-91,"Electro Silhouette",1901,1,1
-92,"Escort RS1600",1970,1,1
-93,"Esprit S1",1976,1,1
-94,"Express Delivery",1901,1,1
-95,F1,1992,1,1
-96,"F1 GT3",1995,1,1
-97,"F1 GTR",1901,1,1
-98,F-100,1956,1,1
-99,"F-150 SVT Raptor",1901,1,1
-100,Firebird,1970,1,1
-101,Firebird,1984,1,1
-102,"Four X Force",2015,1,1
-103,F-Type,1901,1,1
-104,Geoterra,1901,1,1
-105,"GLE Coupe",2015,1,1
-106,"Glory Chaser",2022,1,1
-107,"GT LM",2005,1,1
-108,GTO,2006,1,1
-109,"GT-R (R35) - Guaczilla",2017,1,1
-110,"GTR R35",2017,1,1
-111,"Haulin' Class",1901,1,1
-112,Haul-O-Gram,2019,1,1
-113,"Head Gasket",1901,1,1
-114,"Honda CR-X",1988,1,1
-115,"Hot Wired",1901,1,1
-116,"HotWheels Transit Connect",1901,1,1
-117,Huayra,2012,1,1
-118,"Huracan LP 610-4",2014,1,1
-119,"Hyper Rocker",1901,1,1
-120,"Indy 500 Oval",1901,1,1
-121,Iridium,2014,1,1
-122,"Jay Leno Tank Car",1901,1,1
-123,"Justice League Batmobile",2017,1,1
-124,Kadett,1975,1,1
-125,Kanan,2014,1,1
-126,"Knight Draggin'",2020,1,1
-127,"L200 Triton",2008,1,1
-128,"Land Rover Defender 110",1997,1,1
-129,"Land Shark",1901,1,1
-130,"LB Super Silhouette Silvia (S15)",1901,1,1
-131,"LB-Silhouette WORKS GT 35GT-RR VER.2",1901,1,1
-132,"Let's Go",1901,1,1
-133,"Lightnin' Bug",1901,1,1
-134,LM002,1901,1,1
-135,"Load Lifter",1901,1,1
-136,"Luke Skywalker",2014,1,1
-137,"Mario Standard Kart",1901,1,1
-138,"Matt and Debbie Hay's Pro Street Thunderbird",1988,1,1
-139,"MBX 4X4",1901,1,1
-140,"MBX Armored Truck",1901,1,1
-141,"MBX Mini Swisher",2018,1,1
-142,"Meter Made",1901,1,1
-143,"MGB Coupe",1971,1,1
-144,"MGB GT Coupe",1901,1,1
-145,"Mini Cooper",1901,1,1
-146,"Model 3",1901,1,1
-147,"Model S",2012,1,1
-148,MR2,1901,1,1
-149,Mustang,1901,1,1
-150,"Mustang 2+2 Fastback",1965,1,1
-151,"Mustang Convertible",2018,1,1
-152,"Mustang GT",2018,1,1
-153,"Mustang GT Concept",1901,1,1
-154,"Mustang Mach-E 1400",1901,1,1
-155,"MX-5 Miata",2015,1,1
-156,"MX-5 Miata",1991,1,1
-157,MXR,2013,1,1
-158,"NSX Concept",2012,1,1
-159,Octane,1901,1,1
-160,"Off Road Rider",1901,1,1
-161,"Ollie Rocket",1901,1,1
-162,P1,2013,1,1
-163,"Pajero Evolution",1901,1,1
-164,Panamera,2013,1,1
-165,"Panamera Turbo S E-Hybrid Spor Turismo",1901,1,1
-166,PickUp,1940,1,1
-167,"Piranha Terror",2019,1,1
-168,"Power Pistons",1994,1,1
-169,"Push 'N Puller",1901,1,1
-170,"Quarry King",2007,1,1
-171,"R390 GT1",1901,1,1
-172,R8,1901,1,1
-173,"Rally Truck",1901,1,1
-174,"Range Rover Classic",1901,1,1
-175,"Range Rover Evoque",1901,1,1
-176,"Ranger Raptor",2019,1,1
-177,"Rat Rig",1901,1,1
-178,RD-03,2014,1,1
-179,"Red Planet Transport",2021,1,1
-180,"Reventon Roadster",2007,1,1
-181,"Rising Heat",1901,1,1
-182,"Road Mauler",1901,1,1
-183,"Roller Toaster",1901,1,1
-184,"RS 6 Avant",1901,1,1
-186,"RS2 Avant",1901,1,1
-187,"RX-7 '95",1995,1,1
-188,RZR,1901,1,1
-189,S2000,2011,1,1
-190,"Savanna RX-7 FC3S",1989,1,1
-191,SC400,1990,1,1
-192,"Sea Hunter",1901,1,1
-193,"Series III PickUp",1971,1,1
-194,"Sesto Elemento",2010,1,1
-195,"Shelby GT500",2010,1,1
-196,"Silverado Trail Boss LT",1901,1,1
-197,Skidster,1901,1,1
-198,"Skull Shaker",2019,1,1
-199,"Skull Shaker",2018,1,1
-200,"Skyline 2000 GT-R",1901,1,1
-201,"Skyline 2000 GTX",1901,1,1
-202,"Skyline GT-R (BNR32)",1901,1,1
-203,Slingshot,1901,1,1
-204,SLS,2010,1,1
-205,"Snow Ripper",2016,1,1
-206,"Snow Stormer",1901,1,1
-207,"Sooo Fast",2000,1,1
-208,SP2,1972,1,1
-209,"Spark Arrestor",2014,1,1
-210,"Speed Trap",2020,1,1
-211,"Sport Quattro",1984,1,1
-212,"Sport RS",2010,1,1
-213,"Street Wiener",1901,1,1
-214,"Swamp Commander",1901,1,1
-215,"Swat Truck",1901,1,1
-216,"Sweet Driver",1901,1,1
-217,"Sweptside Pickup",1957,1,1
-218,Symbolic,2020,1,1
-219,"Terrain Trouncer",1901,1,1
-220,"Terzo Millennio",1901,1,1
-221,"TGS Dump truck 18.440",2018,1,1
-222,"The Dark Knight Batmobile",1901,1,1
-223,"Tomb Up",2019,1,1
-224,"Turbine Sublime",1901,1,1
-225,"V12 Speedster",1901,1,1
-226,V60,1901,1,1
-227,"Valhalla Concept",1901,1,1
-228,Van,1986,1,1
-229,Vantom,2012,1,1
-230,Veloci-Racer,1901,1,1
-231,"Viper RT/10",1992,1,1
-232,Vulcan,2015,1,1
-233,What-4-2,2020,1,1
-234,Wicket,2014,1,1
-235,"Willys Pickup 4x4",1962,1,1
-236,Wrangler,2017,1,1
-237,"WRX STI",2015,1,1
-238,"XE SV Project 8",2017,1,1
-239,XJ220,1992,1,1
-240,"X-Wing Fighter",2016,1,1
-241,Yoda,2014,1,1
-242,"Z Proto",1901,1,1
+﻿"1","Pendiente","0000","1","1"
+"2","934.5","2016","1","1"
+"3","2 Jet Z","1901","1","1"
+"4","240 Drift Wagon","1901","1","1"
+"5","356B Convertible","1901","1","1"
+"6","370Z","2010","1","1"
+"7","5 Alarm","1901","1","1"
+"8","599XX","2009","1","1"
+"9","718 Boxster","2016","1","1"
+"10","8C Competizione","2007","1","1"
+"11","911 GT-2","2010","1","1"
+"12","911 Rally","1985","1","1"
+"13","917LH","1901","1","1"
+"14","918 Spyder","2013","1","1"
+"15","Acre Maker","1901","1","1"
+"16","Airuption","2022","1","1"
+"17","Alpine A110","2017","1","1"
+"18","AMG GT","2014","1","1"
+"19","Aristo Rat","1901","1","1"
+"20","Aventador J","2012","1","1"
+"21","Baja Bandit","1901","1","1"
+"22","Baja Bone Shaker","1901","1","1"
+"23","Ballistik","2002","1","1"
+"24","Barracuda Formula S","1901","1","1"
+"25","Beat All","1901","1","1"
+"26","Bel Air","1957","1","1"
+"27","Bentayga","1901","1","1"
+"28","Blastous Moto","1901","1","1"
+"29","Bogzilla","1901","1","1"
+"30","Bot Wheels","2018","1","1"
+"31","Bricking Speed","1901","1","1"
+"32","Bricking Trails","2022","1","1"
+"33","Bronco","2021","1","1"
+"34","Bump Around","2017","1","1"
+"35","C4 Cactus","2018","1","1"
+"36","Camaro","1981","1","1"
+"37","Camaro Custom","2011","1","1"
+"38","Camaro SS","2016","1","1"
+"39","Carbonator","1901","1","1"
+"40","Carrera GT","2003","1","1"
+"41","Charger","1969","1","1"
+"42","Charger","1971","1","1"
+"43","Chevelle SS 396 '67","1967","1","1"
+"44","Chevy Nova '66","1966","1","1"
+"45","Chiron","2016","1","1"
+"46","Chow Mobile","2014","1","1"
+"47","City Turbo II","1985","1","1"
+"48","Civic Custom","1901","1","1"
+"49","Civic EF","1990","1","1"
+"50","Classic 55 Nomad","1955","1","1"
+"51","Clear Speeder","2021","1","1"
+"52","Cliff Hanger","2010","1","1"
+"53","Cloud Cutter","1901","1","1"
+"54","Cobra 427 S/C","1901","1","1"
+"55","Colorado Xtreme","1901","1","1"
+"56","Continental","1901","1","1"
+"57","Corvette","1955","1","1"
+"58","Corvette C6R","1901","1","1"
+"59","Corvette C7 Z06","2016","1","1"
+"60","Corvette C7 Z06 Convertible","2017","1","1"
+"61","Corvette C7.R","2014","1","1"
+"62","Corvette Gasser","1962","1","1"
+"63","Corvette Racer","1969","1","1"
+"64","Corvette Stingray","2014","1","1"
+"65","Cosmic Coupe","1901","1","1"
+"66","Count Muscula","1901","1","1"
+"67","Crop Master","1901","1","1"
+"68","CR-X","1985","1","1"
+"69","CR-X","1988","1","1"
+"70","CTS Coupe","1901","1","1"
+"71","Custom '18 Mustang GT","2018","1","1"
+"72","Custom Datsun 240Z","1973","1","1"
+"73","Custom Small Block","1901","1","1"
+"74","CX-5","1901","1","1"
+"75","Cybertruck","1901","1","1"
+"76","Darth Vader","2014","1","1"
+"77","DAVancenator","1901","1","1"
+"78","DB10","2014","1","1"
+"79","DB5","1963","1","1"
+"80","DBS","2010","3","4"
+"81","Deora III","2018","1","1"
+"82","Diaper Dragger","1901","1","1"
+"83","Dimachinni Veloce","1901","1","1"
+"84","Dino 246 GTS","1968","1","1"
+"85","Draggin Tail","2009","1","1"
+"86","Dragster","1994","1","1"
+"87","Dune Crusher","1901","1","1"
+"88","Dune-A-Soar","1901","1","1"
+"89","Eevil Weevil","1901","1","1"
+"90","El Camino 71","1971","1","1"
+"91","Electro Silhouette","1901","1","1"
+"92","Escort RS1600","1970","1","1"
+"93","Esprit S1","1976","1","1"
+"94","Express Delivery","1901","1","1"
+"95","F1","1992","1","1"
+"96","F1 GT3","1995","1","1"
+"97","F1 GTR","1901","1","1"
+"98","F-100","1956","1","1"
+"99","F-150 SVT Raptor","1901","1","1"
+"100","Firebird","1970","1","1"
+"101","Firebird","1984","1","1"
+"102","Four X Force","2015","1","1"
+"103","F-Type","1901","1","1"
+"104","Geoterra","1901","1","1"
+"105","GLE Coupe","2015","1","1"
+"106","Glory Chaser","2022","1","1"
+"107","GT LM","2005","1","1"
+"108","GTO","2006","1","1"
+"109","GT-R (R35) - Guaczilla","2017","1","1"
+"110","GTR R35","2017","1","1"
+"111","Haulin' Class","1901","1","1"
+"112","Haul-O-Gram","2019","1","1"
+"113","Head Gasket","1901","1","1"
+"114","Honda CR-X","1988","1","1"
+"115","Hot Wired","1901","1","1"
+"116","HotWheels Transit Connect","1901","1","1"
+"117","Huayra","2012","3","31"
+"118","Huracan LP 610-4","2014","3","18"
+"119","Hyper Rocker","1901","1","1"
+"120","Indy 500 Oval","1901","1","1"
+"121","Iridium","2014","1","1"
+"122","Jay Leno Tank Car","1901","1","1"
+"123","Justice League Batmobile","2017","1","1"
+"124","Kadett","1975","1","1"
+"125","Kanan","2014","1","1"
+"126","Knight Draggin'","2020","1","1"
+"127","L200 Triton","2008","1","1"
+"128","Land Rover Defender 110","1997","1","1"
+"129","Land Shark","1901","1","1"
+"130","LB Super Silhouette Silvia (S15)","1901","1","1"
+"131","LB-Silhouette WORKS GT 35GT-RR VER.2","1901","1","1"
+"132","Let's Go","1901","1","1"
+"133","Lightnin' Bug","1901","1","1"
+"134","LM002","1901","1","1"
+"135","Load Lifter","1901","1","1"
+"136","Luke Skywalker","2014","1","1"
+"137","Mario Standard Kart","1901","1","1"
+"138","Matt and Debbie Hay's Pro Street Thunderbird","1988","1","1"
+"139","MBX 4X4","1901","1","1"
+"140","MBX Armored Truck","1901","1","1"
+"141","MBX Mini Swisher","2018","1","1"
+"142","Meter Made","1901","1","1"
+"143","MGB Coupe","1971","1","1"
+"144","MGB GT Coupe","1901","1","1"
+"145","Mini Cooper","1901","1","1"
+"146","Model 3","1901","1","1"
+"147","Model S","2012","1","1"
+"148","MR2","1901","1","1"
+"149","Mustang","1901","1","1"
+"150","Mustang 2+2 Fastback","1965","1","1"
+"151","Mustang Convertible","2018","1","1"
+"152","Mustang GT","2018","1","1"
+"153","Mustang GT Concept","1901","1","1"
+"154","Mustang Mach-E 1400","1901","1","1"
+"155","MX-5 Miata","2015","1","1"
+"156","MX-5 Miata","1991","1","1"
+"157","MXR","2013","1","1"
+"158","NSX Concept","2012","1","1"
+"159","Octane","1901","1","1"
+"160","Off Road Rider","1901","1","1"
+"161","Ollie Rocket","1901","1","1"
+"162","P1","2013","1","1"
+"163","Pajero Evolution","1901","1","1"
+"164","Panamera","2013","1","1"
+"165","Panamera Turbo S E-Hybrid Spor Turismo","1901","1","1"
+"166","PickUp","1940","1","1"
+"167","Piranha Terror","2019","1","1"
+"168","Power Pistons","1994","1","1"
+"169","Push 'N Puller","1901","1","1"
+"170","Quarry King","2007","1","1"
+"171","R390 GT1","1901","1","1"
+"172","R8","1901","1","1"
+"173","Rally Truck","1901","1","1"
+"174","Range Rover Classic","1901","1","1"
+"175","Range Rover Evoque","1901","1","1"
+"176","Ranger Raptor","2019","1","1"
+"177","Rat Rig","1901","1","1"
+"178","RD-03","2014","1","1"
+"179","Red Planet Transport","2021","1","1"
+"180","Reventon Roadster","2007","1","1"
+"181","Rising Heat","1901","1","1"
+"182","Road Mauler","1901","1","1"
+"183","Roller Toaster","1901","1","1"
+"184","RS 6 Avant","1901","1","1"
+"186","RS2 Avant","1901","1","1"
+"187","RX-7 '95","1995","1","1"
+"188","RZR","1901","1","1"
+"189","S2000","2011","1","1"
+"190","Savanna RX-7 FC3S","1989","1","1"
+"191","SC400","1990","1","1"
+"192","Sea Hunter","1901","1","1"
+"193","Series III PickUp","1971","1","1"
+"194","Sesto Elemento","2010","1","1"
+"195","Shelby GT500","2010","1","1"
+"196","Silverado Trail Boss LT","1901","1","1"
+"197","Skidster","1901","1","1"
+"198","Skull Shaker","2019","1","1"
+"199","Skull Shaker","2018","1","1"
+"200","Skyline 2000 GT-R","1901","1","1"
+"201","Skyline 2000 GTX","1901","1","1"
+"202","Skyline GT-R (BNR32)","1901","1","1"
+"203","Slingshot","1901","1","1"
+"204","SLS","2010","1","1"
+"205","Snow Ripper","2016","1","1"
+"206","Snow Stormer","1901","1","1"
+"207","Sooo Fast","2000","1","1"
+"208","SP2","1972","1","1"
+"209","Spark Arrestor","2014","1","1"
+"210","Speed Trap","2020","1","1"
+"211","Sport Quattro","1984","1","1"
+"212","Sport RS","2010","1","1"
+"213","Street Wiener","1901","1","1"
+"214","Swamp Commander","1901","1","1"
+"215","Swat Truck","1901","1","1"
+"216","Sweet Driver","1901","1","1"
+"217","Sweptside Pickup","1957","1","1"
+"218","Symbolic","2020","1","1"
+"219","Terrain Trouncer","1901","1","1"
+"220","Terzo Millennio","1901","1","1"
+"221","TGS Dump truck 18.440","2018","1","1"
+"222","The Dark Knight Batmobile","1901","1","1"
+"223","Tomb Up","2019","1","1"
+"224","Turbine Sublime","1901","1","1"
+"225","V12 Speedster","1901","1","1"
+"226","V60","1901","1","1"
+"227","Valhalla Concept","1901","1","1"
+"228","Van","1986","1","1"
+"229","Vantom","2012","1","1"
+"230","Veloci-Racer","1901","1","1"
+"231","Viper RT/10","1992","1","1"
+"232","Vulcan","2015","1","1"
+"233","What-4-2","2020","1","1"
+"234","Wicket","2014","1","1"
+"235","Willys Pickup 4x4","1962","1","1"
+"236","Wrangler","2017","1","1"
+"237","WRX STI","2015","1","1"
+"238","XE SV Project 8","2017","1","1"
+"239","XJ220","1992","1","1"
+"240","X-Wing Fighter","2016","1","1"
+"241","Yoda","2014","1","1"
+"242","Z Proto","1901","1","1"
+"243","Hot Wheels High","2013","3","3"

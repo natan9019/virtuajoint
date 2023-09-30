@@ -1,2 +1,0 @@
-SELECT idAutos 'Identificador', fechaCompra 'Fecha Compra', precioCompra 'Precio Compra', nombreLugarCompra 'Lugar de Compra', nombreModelo 'Modelo', nombreMarca AS 'Armadora', nombreColor AS 'Color Principal' FROM autos JOIN lugarescompra on autos.idLugarCompra=lugarescompra.idlugaresCompra JOIN modelos ON autos.idModeloAuto=modelos.idModelos 
-JOIN coloresporauto ON autos.idAutos=coloresporauto.idAuto JOIN colores ON coloresporauto.colorCarroceriaPrincipal=colores.idColores JOIN marca ON modelos.idMarcaArmadora=marca.idMarca
