@@ -18,7 +18,7 @@
     <div class="main">
         <section class="mainSection loginSection">
             <h1>Inicia sesión</h1>
-            <form action="/userHomePage.php" class="form-login" method="POST">
+            <form action="./userHomePage.php" class="form-login" method="POST">
                 <div id="divUserName" class="form-input">
                     <label for="lblUserName">Nombre de Usuario</label>
                     <input type="text" id="txtUserName" name="txtUserName" required>

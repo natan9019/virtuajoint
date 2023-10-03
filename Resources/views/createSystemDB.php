@@ -18,7 +18,7 @@
             <div class="w3-container" style="display: initial;">
                 <span title="open Sidebar" style="display: none; color:aqua;" id="openNav" class="w3-button w3-transparent w3-display-topleft w3-xlarge" onclick="w3_open()">☰</span>
                 <h3 class="h3" >Resultados de la inicialización:</h3>
-                <p>Aqui podrás consultar los resultados del proceso de inicializacion</p>
+                <p>Aqui podrás consultar los resultados del proceso de inicializacion: </p><br>
                 <?PHP                    
                     //DECLARAMOS las variables a utilizar para la conexión (Mas a adelante hay que sacar de aqui estos datos)
                     $servername = $_POST["txtServerName"];
@@ -50,10 +50,11 @@
                         $conn = new PDO("mysql:host=$servername", $username, $password);
                         // set the PDO error mode to exception
                         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                        $sql = "CREATE DATABASE $dbname";
+                        // $sql = "CREATE DATABASE $dbname";
+                        $sql = "CREATE SCHEMA IF NOT EXISTS $dbname DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci";
                         // use exec() because no results are returned
                         $conn->exec($sql);
-                        echo "<p>Database: " . $dbname . " created successfully</p><br>";
+                        echo "<p>Database " . $dbname . " created successfully</p>";
                     } 
                     catch(PDOException $e) //Si no pudo, lanza un error en pantalla
                     {
@@ -62,6 +63,90 @@
                     
                     $conn = null;//cerramos la conexion a la bd 
 
+                    /******************************* Creación de la tabla Colores***********************/
+
+                     //Intentamos abrir la conexión y crear la tabla
+                     try 
+                     {
+                         $conn = new PDO("mysql:host=$servername", $username, $password);
+                         // set the PDO error mode to exception
+                         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                         $sql = "USE $dbname;
+                         CREATE TABLE IF NOT EXISTS $dbname.`Colores` (
+                           `idColores` INT NOT NULL AUTO_INCREMENT,
+                           `nombreColor` VARCHAR(45) NOT NULL,
+                           PRIMARY KEY (`idColores`),
+                           UNIQUE INDEX `idColores_UNIQUE` (`idColores` ASC) VISIBLE,
+                           UNIQUE INDEX `nombreColor_UNIQUE` (`nombreColor` ASC) VISIBLE)
+                         ENGINE = InnoDB;";
+                         // use exec() because no results are returned
+                         $conn->exec($sql);
+                         echo "<p>Table Colores created successfully</p>";
+                         
+                     } 
+                     catch(PDOException $e) //Si no pudo, lanza un error en pantalla
+                     {
+                         echo "<p>Error: ". $sql . "<br>" . $e->getMessage() . "</p><br>";                          
+                     }
+                     
+                     $conn = null;//cerramos la conexion a la bd 
+
+
+                    /******************************* Creación de la tabla LugaresCompra***********************/
+
+                     //Intentamos abrir la conexión y crear la tabla
+                     try 
+                     {
+                         $conn = new PDO("mysql:host=$servername", $username, $password);
+                         // set the PDO error mode to exception
+                         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                         $sql = "
+                         CREATE TABLE IF NOT EXISTS $dbname.`LugaresCompra` (
+                            `idlugaresCompra` INT NOT NULL AUTO_INCREMENT,
+                            `nombreLugarCompra` VARCHAR(45) NULL,
+                            PRIMARY KEY (`idlugaresCompra`),
+                            UNIQUE INDEX `idlugaresCompra_UNIQUE` (`idlugaresCompra` ASC) VISIBLE)
+                          ENGINE = InnoDB;
+                         ";
+                         // use exec() because no results are returned
+                         $conn->exec($sql);
+                         echo "<p>Table LugaresCompra created successfully</p>";
+                         
+                     } 
+                     catch(PDOException $e) //Si no pudo, lanza un error en pantalla
+                     {
+                         echo "<p>Error: ". $sql . "<br>" . $e->getMessage() . "</p><br>";                          
+                     }
+                     
+                     $conn = null;//cerramos la conexion a la bd 
+
+                    /******************************* Creación de la tabla países***********************/
+                    try 
+                    {
+                        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+                        // set the PDO error mode to exception
+                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                        // sql to create table
+                        $sqlQueryCreateTable = "CREATE TABLE IF NOT EXISTS $dbname.`Paises` (
+                            `idPaises` INT NOT NULL AUTO_INCREMENT,
+                            `nombrePaises` VARCHAR(45) NOT NULL,
+                            PRIMARY KEY (`idPaises`),
+                            UNIQUE INDEX `idPaises_UNIQUE` (`idPaises` ASC) VISIBLE,
+                            UNIQUE INDEX `nombrePaises_UNIQUE` (`nombrePaises` ASC) VISIBLE)
+                          ENGINE = InnoDB;";
+
+                        // use exec() because no results are returned
+                        $conn->exec($sqlQueryCreateTable);
+                        echo "<p>Table Paises created successfully</p>";
+                    } 
+                    catch(PDOException $e) 
+                    {
+                        echo "<p>" . $sqlQueryCreateTable . "<br>" . $e->getMessage() . "</p><br>";
+                    }
+                    //Cerramos la conexión a la base:
+                    $conn = null;
+
+
                     /******************************* Creación de la tabla usuarios***********************/
                     try 
                     {
@@ -69,27 +154,30 @@
                         // set the PDO error mode to exception
                         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                         // sql to create table
-                        $sqlQueryCreateTable = "CREATE TABLE `users` (
-                            `idUser` SMALLINT(5) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Id autoincremental del usuario',
-                            `userFName` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'Nombre del usuario' COLLATE 'utf8mb4_general_ci',
-                            `userLName` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'Apellido del usuario' COLLATE 'utf8mb4_general_ci',
-                            `aliasUser` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'Nickname o nombre de usuario dentro del sistema' COLLATE 'utf8mb4_general_ci',
-                            `paisUser` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'Nacionalidad del usuario' COLLATE 'utf8mb4_general_ci',
-                            `genderUser` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'Genero del usuario' COLLATE 'utf8mb4_general_ci',
-                            `emailUser` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'Correo electronico del usuario' COLLATE 'utf8mb4_general_ci',
-                            `hashPsswdUser` VARCHAR(100) NOT NULL DEFAULT '' COMMENT 'Hash de la contraseña del usuario' COLLATE 'utf8mb4_general_ci',
-                            `websiteUser` VARCHAR(50) COMMENT 'Sitio web del usuario (OPCIONAL)' COLLATE 'utf8mb4_general_ci',
+                        $sqlQueryCreateTable = "CREATE TABLE IF NOT EXISTS $dbname.`Usuarios` (
+                            `idUsuarios` INT NOT NULL AUTO_INCREMENT COMMENT 'Id autoincremental del usuario',
+                            `userFName` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'Nombre del usuario',
+                            `userLName` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'Apellido del usuario',
+                            `aliasUser` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'Nickname o nombre de usuario dentro del sistema',
+                            `idPaisUser` INT NOT NULL DEFAULT 1 COMMENT 'Nacionalidad del usuario',
+                            `genderUser` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'Genero del usuario',
+                            `emailUser` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'Correo electronico del usuario',
+                            `hashPsswdUser` VARCHAR(100) NOT NULL DEFAULT '' COMMENT 'Hash de la contraseña del usuario',
+                            `websiteUser` VARCHAR(50) NULL COMMENT 'Sitio web del usuario (OPCIONAL)',
                             `regDate` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Registro de tiempo de la creación del usuario',
-                            PRIMARY KEY (`idUser`) USING BTREE
-                        )
-                        COMMENT='Usuarios del sistema VirtuaJoint'
-                        COLLATE='utf8mb4_general_ci'
-                        ENGINE=InnoDB
-                        AUTO_INCREMENT=0";
+                            PRIMARY KEY (`idUsuarios`, `idPaisUser`),
+                            UNIQUE INDEX `idUsuarios_UNIQUE` (`idUsuarios` ASC) VISIBLE,
+                            INDEX `FK_Usuarios-Pais_idx` (`idPaisUser` ASC) VISIBLE,
+                            CONSTRAINT `FK_Usuarios-Pais`
+                              FOREIGN KEY (`idPaisUser`)
+                              REFERENCES `virtuajoint`.`Paises` (`idPaises`)
+                              ON DELETE NO ACTION
+                              ON UPDATE NO ACTION)
+                          ENGINE = InnoDB;";
 
                         // use exec() because no results are returned
                         $conn->exec($sqlQueryCreateTable);
-                        echo "<p>Table Users created successfully</p>" . "<br>";
+                        echo "<p>Table Users created successfully</p>";
                     } 
                     catch(PDOException $e) 
                     {
@@ -101,56 +189,9 @@
                     //Generamos el hash de la contraseña del SuperAdmin
                     $psswdHashSA = password_hash($psswdSuperAdmin, PASSWORD_BCRYPT);
                     
-                    /******************************* Insertamos el usuario superadmin en la tabla usuarios***********************/
-                    try
-                    {
-                        //Abrimos la conexión usando PDO y le pasamos los parametros:
-                        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-                        // configuramos el modo de error de PDO con una excepecion:
-                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                        //Metemos en una variable el código SQL a ejecutar:
-                        $sqlInsertInTable = "INSERT INTO users (idUser, userFName, userLName, aliasUser, paisUser, genderUser, emailUser, hashPsswdUser, websiteUser)
-                        values (1,'Super', 'Admin', 'SuperAdmin', 'Mexico', 'Macho', 'email@domain', '$psswdHashSA', 'www.virtuajoint.com.mx')";
+                    
 
-                        //Usamos exec() por que no se returnan resultados:
-                        $conn->exec($sqlInsertInTable);
-                        echo "<p>Usuario admin creado correctamente en la BD</p>";
-                    }
-                    catch(PDOException $e)
-                    {
-                        echo "<p>" . $sqlInsertInTable . "<br>" . $e->getMessage() . "</p>";
-                    }
 
-                    //Por ultimo cerramos la conexion a la BD
-                    $conn =null;
-
-                    /******************************* Creación de la tabla países***********************/
-                    try 
-                    {
-                        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-                        // set the PDO error mode to exception
-                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                        // sql to create table
-                        $sqlQueryCreateTable = "CREATE TABLE `Paises` (
-                            `idPais` INT(3) UNSIGNED NOT NULL UNIQUE AUTO_INCREMENT COMMENT 'Id autoincremental del país',
-                            `nombrePais` VARCHAR(60) NOT NULL DEFAULT '' COMMENT 'Nombre del pais' COLLATE 'utf8mb4_general_ci',
-                            PRIMARY KEY (`idPais`) USING BTREE
-                        )
-                        COMMENT='Paises registrados'
-                        COLLATE='utf8mb4_general_ci'
-                        ENGINE=InnoDB
-                        AUTO_INCREMENT=0";
-
-                        // use exec() because no results are returned
-                        $conn->exec($sqlQueryCreateTable);
-                        echo "<p>Table Paises created successfully</p>" . "<br>";
-                    } 
-                    catch(PDOException $e) 
-                    {
-                        echo "<p>" . $sqlQueryCreateTable . "<br>" . $e->getMessage() . "</p><br>";
-                    }
-                    //Cerramos la conexión a la base:
-                    $conn = null;
 
                     /******************************* Insertamos los paises en la tabla Paises***********************/
                     try
@@ -160,14 +201,44 @@
                         // configuramos el modo de error de PDO con una excepecion:
                         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                         //Metemos en una variable el código SQL a ejecutar:
-                        $sqlInsertInTable = "INSERT INTO Paises (nombrePais) values ('China');
-                        INSERT INTO Paises (nombrePais) VALUES ('Malasia');
-                        INSERT INTO Paises (nombrePais) VALUES ('Indonesia');
-                        INSERT INTO Paises (nombrePais) VALUES ('Tailandia');
+                        $sqlInsertInTable = "INSERT INTO $dbname.`Paises` (`idPaises`, `nombrePaises`) VALUES (1, 'Pendiente');
+                        INSERT INTO $dbname.`Paises` (`idPaises`, `nombrePaises`) VALUES (2, 'Alemania');
+                        INSERT INTO $dbname.`Paises` (`idPaises`, `nombrePaises`) VALUES (3, 'Corea Sur');
+                        INSERT INTO $dbname.`Paises` (`idPaises`, `nombrePaises`) VALUES (4, 'EUA');
+                        INSERT INTO $dbname.`Paises` (`idPaises`, `nombrePaises`) VALUES (5, 'Francia');
+                        INSERT INTO $dbname.`Paises` (`idPaises`, `nombrePaises`) VALUES (6, 'Inglaterra');
+                        INSERT INTO $dbname.`Paises` (`idPaises`, `nombrePaises`) VALUES (7, 'Italia');
+                        INSERT INTO $dbname.`Paises` (`idPaises`, `nombrePaises`) VALUES (8, 'Japon');
+                        INSERT INTO $dbname.`Paises` (`idPaises`, `nombrePaises`) VALUES (9, 'Suecia');
+                        INSERT INTO $dbname.`Paises` (`idPaises`, `nombrePaises`) VALUES (10, 'China');
+                        INSERT INTO $dbname.`Paises` (`idPaises`, `nombrePaises`) VALUES (11, 'Indonesia');
+                        INSERT INTO $dbname.`Paises` (`idPaises`, `nombrePaises`) VALUES (12, 'Malasia');
+                        INSERT INTO $dbname.`Paises` (`idPaises`, `nombrePaises`) VALUES (13, 'Tailandia');
+                        INSERT INTO $dbname.`Paises` (`idPaises`, `nombrePaises`) VALUES (14, 'Mexico');
                         ";
                         //Usamos exec() por que no se returnan resultados:
                         $conn->exec($sqlInsertInTable);
                         echo "<p>Paises iniciales insertados correctamente</p>";
+                    }
+                    catch(PDOException $e)
+                    {
+                        echo "<p>" . $sqlInsertInTable . "<br>" . $e->getMessage() . "</p>";
+                    }
+
+                    /******************************* Insertamos el usuario superadmin en la tabla usuarios***********************/
+                    try
+                    {
+                        //Abrimos la conexión usando PDO y le pasamos los parametros:
+                        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+                        // configuramos el modo de error de PDO con una excepecion:
+                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                        //Metemos en una variable el código SQL a ejecutar:
+                        $sqlInsertInTable = "INSERT INTO $dbname.`Usuarios` (`idUsuarios`, `userFName`, `userLName`, `aliasUser`, `idPaisUser`, `genderUser`, `emailUser`, `hashPsswdUser`, `websiteUser`)
+                        values (1,'Super', 'Admin', 'SuperAdmin', 1, 'Macho', 'email@domain', '$psswdHashSA', 'www.virtuajoint.com.mx')";
+
+                        //Usamos exec() por que no se returnan resultados:
+                        $conn->exec($sqlInsertInTable);
+                        echo "<p>Usuario admin creado correctamente en la BD</p>";
                     }
                     catch(PDOException $e)
                     {
