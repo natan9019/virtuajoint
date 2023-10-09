@@ -19,7 +19,9 @@
             <span title="open Sidebar" style="display: none; color:aqua;" id="openNav" class="w3-button w3-transparent w3-display-topleft w3-xlarge" onclick="w3_open()">☰</span>
             <h3 class="h3" >Baja de Paises</h3>
             <?PHP
-                include('C:\laragon\www\virtuajoint\config\database.php');
+                // include('C:\laragon\www\virtuajoint\config\database.php');
+                //Así me explicó Fidelmar y funcionó
+                include('../../config/database.php');
                 
                 //Declaramos la variable donde se traerá el nombre del pais
                 $nombrePais = "";

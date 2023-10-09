@@ -20,7 +20,9 @@
         <h2>Da click en "confirma tu cuenta" en el correo que hemos enviado al email que indicaste: "<?php echo $_POST["txtEmail"]; ?>" </h2>
         <?php
             // invocamos el archivo de la configuracion de BD
-            include('C:\laragon\www\virtuajoint\config\database.php');
+            // include('C:\laragon\www\virtuajoint\config\database.php');
+            //Así me explicó Fidelmar y funcionó
+            include('../../config/database.php');
             
             /*Insertamos los valores del nuevo usuario en la BD de "Virtuajoint", tabla "users" */
 

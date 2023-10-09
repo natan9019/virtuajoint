@@ -10,10 +10,10 @@
         <section id="navbarSection">
             <?PHP
                 // invocamos el archivo de la configuracion de 
-                include('C:\laragon\www\virtuajoint\config\database.php');
+                // include('C:\laragon\www\virtuajoint\config\database.php');
             
-                // include('config/database.php');
-                // include('./../config/database.php');
+                //Así me explicó Fidelmar y funcionó
+                include('../../config/database.php');
 
                 //invocamos los menús:
                 include('navbarMainMenu.php');

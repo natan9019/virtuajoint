@@ -10,7 +10,7 @@
             </div>
         </div> 
  
-        <a href="/Resources/views/initialize.php">Inicializar Sistema</a>
+        <a href="/Resources/views/initialize.php">Administrar Sistema</a>
     </div>
 </body>
 
