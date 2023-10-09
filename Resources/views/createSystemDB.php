@@ -100,13 +100,13 @@
                          $conn = new PDO("mysql:host=$servername", $username, $password);
                          // set the PDO error mode to exception
                          $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                         $sql = "
-                         CREATE TABLE IF NOT EXISTS $dbname.`LugaresCompra` (
+                         $sql = 
+                            "CREATE TABLE IF NOT EXISTS $dbname.`LugaresCompra` (
                             `idlugaresCompra` INT NOT NULL AUTO_INCREMENT,
                             `nombreLugarCompra` VARCHAR(45) NULL,
                             PRIMARY KEY (`idlugaresCompra`),
                             UNIQUE INDEX `idlugaresCompra_UNIQUE` (`idlugaresCompra` ASC) VISIBLE)
-                          ENGINE = InnoDB;
+                            ENGINE = InnoDB;
                          ";
                          // use exec() because no results are returned
                          $conn->exec($sql);
@@ -133,7 +133,7 @@
                             PRIMARY KEY (`idPaises`),
                             UNIQUE INDEX `idPaises_UNIQUE` (`idPaises` ASC) VISIBLE,
                             UNIQUE INDEX `nombrePaises_UNIQUE` (`nombrePaises` ASC) VISIBLE)
-                          ENGINE = InnoDB;";
+                            ENGINE = InnoDB;";
 
                         // use exec() because no results are returned
                         $conn->exec($sqlQueryCreateTable);
@@ -146,6 +146,155 @@
                     //Cerramos la conexión a la base:
                     $conn = null;
 
+                    /******************************* Creación de la tabla Jugueteras***********************/
+                    try 
+                    {
+                        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+                        // set the PDO error mode to exception
+                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                        // sql to create table
+                        $sqlQueryCreateTable = "CREATE TABLE IF NOT EXISTS `virtuajoint`.`Jugueteras` (
+                            `idJugueteras` INT NOT NULL AUTO_INCREMENT,
+                            `nombreJugueteras` VARCHAR(45) NOT NULL,
+                            `idPais` INT NOT NULL,
+                            `fundacionJugueteras` SMALLINT(5) NULL COMMENT 'Año de fundación de la marca',
+                            PRIMARY KEY (`idJugueteras`, `idPais`),
+                            UNIQUE INDEX `nombreMarca_UNIQUE` (`nombreJugueteras` ASC) VISIBLE,
+                            UNIQUE INDEX `idMarca_UNIQUE` (`idJugueteras` ASC) VISIBLE,
+                            INDEX `FK_Marca-Pais_idx` (`idPais` ASC) VISIBLE,
+                            CONSTRAINT `FK_Marca-Pais`
+                              FOREIGN KEY (`idPais`)
+                              REFERENCES `virtuajoint`.`Paises` (`idPaises`)
+                              ON DELETE NO ACTION
+                              ON UPDATE NO ACTION)
+                            ENGINE = InnoDB;";
+
+                        // use exec() because no results are returned
+                        $conn->exec($sqlQueryCreateTable);
+                        echo "<p>Table Jugueteras created successfully</p>";
+                    } 
+                    catch(PDOException $e) 
+                    {
+                        echo "<p>" . $sqlQueryCreateTable . "<br>" . $e->getMessage() . "</p><br>";
+                    }
+                    //Cerramos la conexión a la base:
+                    $conn = null;
+
+                    /******************************* Creación de la tabla Armadoras***********************/
+                    try 
+                    {
+                        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+                        // set the PDO error mode to exception
+                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                        // sql to create table
+                        $sqlQueryCreateTable = "CREATE TABLE IF NOT EXISTS `virtuajoint`.`Armadoras` (
+                            `idArmadoras` INT NOT NULL AUTO_INCREMENT,
+                            `nombreArmadoras` VARCHAR(45) NOT NULL,
+                            `idPais` INT NOT NULL,
+                            `fundacionArmadoras` VARCHAR(45) NULL,
+                            PRIMARY KEY (`idArmadoras`, `idPais`),
+                            UNIQUE INDEX `idArmadoras_UNIQUE` (`idArmadoras` ASC) VISIBLE,
+                            UNIQUE INDEX `nombreArmadoras_UNIQUE` (`nombreArmadoras` ASC) VISIBLE,
+                            INDEX `FK_Armadoras-Paises_idx` (`idPais` ASC) VISIBLE,
+                            CONSTRAINT `FK_Armadoras-Paises`
+                              FOREIGN KEY (`idPais`)
+                              REFERENCES `virtuajoint`.`Paises` (`idPaises`)
+                              ON DELETE NO ACTION
+                              ON UPDATE NO ACTION)
+                            ENGINE = InnoDB;";
+
+                        // use exec() because no results are returned
+                        $conn->exec($sqlQueryCreateTable);
+                        echo "<p>Table Armadoras created successfully</p>";
+                    } 
+                    catch(PDOException $e) 
+                    {
+                        echo "<p>" . $sqlQueryCreateTable . "<br>" . $e->getMessage() . "</p><br>";
+                    }
+                    //Cerramos la conexión a la base:
+                    $conn = null;
+
+                   /******************************* Creación de la tabla Autos***********************/
+                   try 
+                   {
+                       $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+                       // set the PDO error mode to exception
+                       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                       // sql to create table
+                       $sqlQueryCreateTable = 
+                        "CREATE TABLE IF NOT EXISTS `virtuajoint`.`Autos` (
+                            `idAutos` INT NOT NULL AUTO_INCREMENT,
+                            `fechaCompra` DATE NOT NULL DEFAULT '1990-02-19',
+                            `precioCompra` DECIMAL(5,2) NOT NULL DEFAULT 0.0,
+                            `idLugarCompra` INT NOT NULL,
+                            `idModeloAuto` INT NOT NULL,
+                            PRIMARY KEY (`idAutos`, `idLugarCompra`, `idModeloAuto`),
+                            UNIQUE INDEX `idAutos_UNIQUE` (`idAutos` ASC) VISIBLE,
+                            INDEX `FK_Autos-Lugar_idx` (`idLugarCompra` ASC) VISIBLE,
+                            INDEX `FK_Autos-Modelo_idx` (`idModeloAuto` ASC) VISIBLE,
+                            CONSTRAINT `FK_Autos-Lugar`
+                              FOREIGN KEY (`idLugarCompra`)
+                              REFERENCES `virtuajoint`.`LugaresCompra` (`idlugaresCompra`)
+                              ON DELETE NO ACTION
+                              ON UPDATE NO ACTION,
+                            CONSTRAINT `FK_Autos-Modelo`
+                              FOREIGN KEY (`idModeloAuto`)
+                              REFERENCES `virtuajoint`.`Modelos` (`idModelos`)
+                              ON DELETE NO ACTION
+                              ON UPDATE NO ACTION)
+                          ENGINE = InnoDB;";
+
+                       // use exec() because no results are returned
+                       $conn->exec($sqlQueryCreateTable);
+                       echo "<p>Table Autos created successfully</p>";
+                   } 
+                   catch(PDOException $e) 
+                   {
+                       echo "<p>" . $sqlQueryCreateTable . "<br>" . $e->getMessage() . "</p><br>";
+                   }
+                   //Cerramos la conexión a la base:
+                   $conn = null;                    
+
+                                     /******************************* Creación de la tabla Modelos***********************/
+                                     try 
+                                     {
+                                         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+                                         // set the PDO error mode to exception
+                                         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                         // sql to create table
+                                         $sqlQueryCreateTable = 
+                                          "CREATE TABLE IF NOT EXISTS `virtuajoint`.`Modelos` (
+                                          `idModelos` INT NOT NULL AUTO_INCREMENT,
+                                          `nombreModelo` VARCHAR(45) NOT NULL,
+                                          `añoModelo` VARCHAR(45) NULL COMMENT 'Todos los registros con 1901 en el año del modelo, es por que están pendientes de definirse el año real',
+                                          `idMarcaJuguetera` INT NOT NULL,
+                                          `idMarcaArmadora` INT NOT NULL,
+                                          PRIMARY KEY (`idModelos`, `idMarcaJuguetera`, `idMarcaArmadora`),
+                                          UNIQUE INDEX `idModelos_UNIQUE` (`idModelos` ASC) VISIBLE,
+                                          INDEX `FK_Modelos-Armadoras_idx` (`idMarcaArmadora` ASC) VISIBLE,
+                                          CONSTRAINT `FK_Modelos-Jugueteras`
+                                            FOREIGN KEY (`idMarcaJuguetera`)
+                                            REFERENCES `virtuajoint`.`Jugueteras` (`idJugueteras`)
+                                            ON DELETE NO ACTION
+                                            ON UPDATE NO ACTION,
+                                          CONSTRAINT `FK_Modelos-Armadoras`
+                                            FOREIGN KEY (`idMarcaArmadora`)
+                                            REFERENCES `virtuajoint`.`Armadoras` (`idArmadoras`)
+                                            ON DELETE NO ACTION
+                                            ON UPDATE NO ACTION)
+                                          ENGINE = InnoDB;";
+                  
+                                         // use exec() because no results are returned
+                                         $conn->exec($sqlQueryCreateTable);
+                                         echo "<p>Table Modelos created successfully</p>";
+                                     } 
+                                     catch(PDOException $e) 
+                                     {
+                                         echo "<p>" . $sqlQueryCreateTable . "<br>" . $e->getMessage() . "</p><br>";
+                                     }
+                                     //Cerramos la conexión a la base:
+                                     $conn = null;                    
+                  
 
                     /******************************* Creación de la tabla usuarios***********************/
                     try 
@@ -154,14 +303,14 @@
                         // set the PDO error mode to exception
                         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                         // sql to create table
-                        $sqlQueryCreateTable = "CREATE TABLE IF NOT EXISTS $dbname.`Usuarios` (
+                        $sqlQueryCreateTable = "CREATE TABLE IF NOT EXISTS `virtuajoint`.`Usuarios` (
                             `idUsuarios` INT NOT NULL AUTO_INCREMENT COMMENT 'Id autoincremental del usuario',
                             `userFName` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'Nombre del usuario',
                             `userLName` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'Apellido del usuario',
                             `aliasUser` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'Nickname o nombre de usuario dentro del sistema',
                             `idPaisUser` INT NOT NULL DEFAULT 1 COMMENT 'Nacionalidad del usuario',
                             `genderUser` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'Genero del usuario',
-                            `emailUser` VARCHAR(50) NOT NULL DEFAULT '' COMMENT 'Correo electronico del usuario',
+                            `emailUser` VARCHAR(50) CHARACTER SET 'utf8mb4' NOT NULL DEFAULT '' COMMENT 'Correo electronico del usuario',
                             `hashPsswdUser` VARCHAR(100) NOT NULL DEFAULT '' COMMENT 'Hash de la contraseña del usuario',
                             `websiteUser` VARCHAR(50) NULL COMMENT 'Sitio web del usuario (OPCIONAL)',
                             `regDate` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Registro de tiempo de la creación del usuario',
@@ -188,10 +337,6 @@
 
                     //Generamos el hash de la contraseña del SuperAdmin
                     $psswdHashSA = password_hash($psswdSuperAdmin, PASSWORD_BCRYPT);
-                    
-                    
-
-
 
                     /******************************* Insertamos los paises en la tabla Paises***********************/
                     try
@@ -216,7 +361,7 @@
                         INSERT INTO $dbname.`Paises` (`idPaises`, `nombrePaises`) VALUES (13, 'Tailandia');
                         INSERT INTO $dbname.`Paises` (`idPaises`, `nombrePaises`) VALUES (14, 'Mexico');
                         ";
-                        //Usamos exec() por que no se returnan resultados:
+                        //Usamos exec() por que no se retornan resultados:
                         $conn->exec($sqlInsertInTable);
                         echo "<p>Paises iniciales insertados correctamente</p>";
                     }

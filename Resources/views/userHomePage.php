@@ -2,17 +2,23 @@
 <html>
     <head>
         <title>Mi portal - Virtuajoint</title>
-        <link rel="stylesheet" href="./css/styles.css">
+        <link rel="stylesheet" href="../css/styles.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <section id="navbarSection">
             <?PHP
+                // invocamos el archivo de la configuracion de 
+                include('C:\laragon\www\virtuajoint\config\database.php');
+            
+                // include('config/database.php');
+                // include('./../config/database.php');
+
+                //invocamos los menús:
                 include('navbarMainMenu.php');
                 include('sideBarMenu.php');
-                // invocamos el archivo de la configuracion de BD
-                include('../config/database.php');
+                
             ?>
         </section>
         <div class="main" id="main" style="margin-left: 180px;">
@@ -79,7 +85,7 @@
     
     
                         //Creamos la variable PHP y le pasamos el script SQL:
-                        $sqlSelectWhereScript = $conn->prepare("SELECT aliasUser FROM users WHERE aliasUser = '$aliasUser'");
+                        $sqlSelectWhereScript = $conn->prepare("SELECT aliasUser FROM usuarios WHERE aliasUser = '$aliasUser'");
                         $sqlSelectWhereScript->execute();
     
                         // set the resulting array to associative
@@ -110,7 +116,7 @@
                         /*Ya que se validó que el usuario existe, validamos la contraseña*/
     
                         //Traemos todos los valores del alias que coincida con el nombre de usuario ingresado
-                        $sqlSelectUser = $conn->prepare("SELECT * FROM users WHERE aliasUser =:aliasUser");
+                        $sqlSelectUser = $conn->prepare("SELECT * FROM usuarios WHERE aliasUser =:aliasUser");
     
                         $sqlSelectUser->bindParam("aliasUser", $aliasUser, PDO::PARAM_STR);
                         $sqlSelectUser->execute();
@@ -148,7 +154,7 @@
                                 // $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                                 
                                 //Pasamos el código SQL a la variable de PHP que se usará para ejecutarlo:
-                                $sqlSelectScript = $conn->prepare("SELECT * FROM users where aliasUser = '$aliasUser'");
+                                $sqlSelectScript = $conn->prepare("SELECT * FROM usuarios where aliasUser = '$aliasUser'");
                                 $sqlSelectScript->execute();
                                 
                                 // set the resulting array to associative

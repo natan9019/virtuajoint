@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gracias por tu registro</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <?PHP
@@ -18,7 +20,7 @@
         <h2>Da click en "confirma tu cuenta" en el correo que hemos enviado al email que indicaste: "<?php echo $_POST["txtEmail"]; ?>" </h2>
         <?php
             // invocamos el archivo de la configuracion de BD
-            include('../config/database.php');
+            include('C:\laragon\www\virtuajoint\config\database.php');
             
             /*Insertamos los valores del nuevo usuario en la BD de "Virtuajoint", tabla "users" */
 
@@ -75,7 +77,7 @@
                 // $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
                 // // set the PDO error mode to exception
                 // $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $sql = "INSERT INTO users (userFName, userLName, aliasUser, paisUser, genderUser, emailUser, hashPsswdUser, websiteUser)
+                $sql = "INSERT INTO usuarios (userFName, userLName, aliasUser, idPaisUser, genderUser, emailUser, hashPsswdUser, websiteUser)
                 VALUES ('$userFName', '$userLName', '$aliasUser', '$countryUser', '$genderUser', '$emailUser', '$psswdHash', '$websiteUser')";
                 // use exec() because no results are returned
                 $conn->exec($sql);

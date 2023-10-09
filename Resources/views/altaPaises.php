@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="/Resources/css/styles.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Alta de Países</title>
@@ -19,7 +19,7 @@
             <span title="open Sidebar" style="display: none; color:aqua;" id="openNav" class="w3-button w3-transparent w3-display-topleft w3-xlarge" onclick="w3_open()">☰</span>
             <h3 class="h3" >Alta de Paises</h3>
             <?PHP
-                include('../config/database.php');
+                include('C:\laragon\www\virtuajoint\config\database.php');
                 
                 //Declaramos la variable donde se traerá el nombre del pais
                 $nombrePais = "";
@@ -43,7 +43,7 @@
 
                 try 
                 {
-                    $sqlInsert = "INSERT INTO paises (nombrePais)
+                    $sqlInsert = "INSERT INTO paises (nombrePaises)
                     VALUES ('$nombrePais')";
                     // use exec() because no results are returned
                     $conn->exec($sqlInsert);

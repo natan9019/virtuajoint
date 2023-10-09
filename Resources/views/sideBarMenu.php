@@ -15,7 +15,7 @@
                     <a class="w3-bar-item w3-button" href="javascript:void(0)">Link 3</a>
                 </div>
             </div>
-            <a class="w3-bar-item w3-button" href="http://virtuajoint.test/userHomePage.php">Mi Portal</a>
+            <a class="w3-bar-item w3-button" href="/Resources/views/userHomePage.php">Mi Portal</a>
             <a class="w3-bar-item w3-button" href="javascript:void(0)">Contact</a>
             <a class="w3-bar-item w3-button" href="javascript:void(0)">Support</a>
         </div>

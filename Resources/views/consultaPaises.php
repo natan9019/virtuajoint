@@ -19,12 +19,12 @@
             <span title="open Sidebar" style="display: none; color:aqua;" id="openNav" class="w3-button w3-transparent w3-display-topleft w3-xlarge" onclick="w3_open()">☰</span>
             <h3 class="h3" >Consultar Paises</h3>
             <?PHP
-                include('/config/database.php');
+                include('C:\laragon\www\virtuajoint\config\database.php');
                 //Cuando se invoca esta clase renderiza la tabla en pantalla con los registros encontrados en la BD
 
                 echo "<table style='border: solid 2px black;'>";
                 echo "<tr><th>Id</th><th>Pais</th></tr>";
-                class TableRows extends RecursiveIteratorIterator 
+                class TableRows extends RecursiveIteratorIterator
                 {
                     function __construct($it) {
                         parent::__construct($it, self::LEAVES_ONLY);
@@ -45,7 +45,7 @@
 
                 try {
                     
-                    $stmt = $conn->prepare("SELECT idPais, nombrePais FROM paises");
+                    $stmt = $conn->prepare("SELECT idPaises, nombrePaises FROM paises");
                     $stmt->execute();
                 
                     // set the resulting array to associative
