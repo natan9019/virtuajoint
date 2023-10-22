@@ -24,20 +24,7 @@
             //Así me explicó Fidelmar y funcionó
             include('../../config/database.php');
             
-            /*Insertamos los valores del nuevo usuario en la BD de "Virtuajoint", tabla "users" */
-
-            // //Entorno DEV-Local
-            // //DECLARAMOS las variables a utilizar para la conexión (Mas a adelante hay que sacar de aqui estos datos)
-            // $servername = "localhost";
-            // $username = "root";
-            // $password = "";
-            // $dbname = "virtuajoint";
-
-            // //Entrono DEV-Cloud
-            // $servername = "dbs-virtuajoint-dev1.mysql.database.azure.com";
-            // $username = "admin5";
-            // $password = "Fuco.truco";
-            // $dbname = "virtuajoint";
+            
 
             //Traemos los valores de los campos del formulario de registro y los convertimos en variables de php.
             //Antes de convertirlos, los pasamos a la función "test_input" para eliminar caracteres innecesarios y "\" con el fin de mejorar la seguridad
@@ -73,7 +60,7 @@
                 return $data;
             }
 
-            //Intentamos abrir la conexión y crear la BD
+            /*Insertamos los valores del nuevo usuario en la BD de "Virtuajoint", tabla "usuarios" */
             try
             {
                 // $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -93,7 +80,7 @@
 
             $conn = null;//cerramos la conexion a la bd
 
-            /*Terminamos de insertar los valores del nuevo usuario en la BD de "Virtuajoint", tabla "users" */
+            /*Terminamos de insertar los valores del nuevo usuario en la BD de "Virtuajoint", tabla "usuarios" */
         ?>
     </section>
 

@@ -10,9 +10,14 @@
             <div class="w3-dropdown-hover w3-green">
                 <a class="w3-button" href="masterCatalogue.php">Catálogo Maestro <i class="fa fa-caret-down"></i></a>
                 <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                    <a class="w3-bar-item w3-button" href="abcPaises.php">ABC Paises</a>
-                    <a class="w3-bar-item w3-button" href="javascript:void(0)">Link 2</a>
-                    <a class="w3-bar-item w3-button" href="javascript:void(0)">Link 3</a>
+                    <a class="w3-bar-item w3-button" href="abcPaises.php">Paises</a>
+                    <a class="w3-bar-item w3-button" href="abcJugueteras.php">Jugueteras</a>
+                    <a class="w3-bar-item w3-button" href="javascript:void(0)">Armadoras</a>
+                    <a class="w3-bar-item w3-button" href="javascript:void(0)">Modelos</a>
+                    <a class="w3-bar-item w3-button" href="javascript:void(0)">LugaresCompra</a>
+                    <a class="w3-bar-item w3-button" href="javascript:void(0)">Colores</a>
+                    <a class="w3-bar-item w3-button" href="javascript:void(0)">Autos</a>
+                    <a class="w3-bar-item w3-button" href="javascript:void(0)">Usuarios</a>
                 </div>
             </div>
             <a class="w3-bar-item w3-button" href="/Resources/views/userHomePage.php">Mi Portal</a>
