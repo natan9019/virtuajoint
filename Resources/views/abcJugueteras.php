@@ -59,6 +59,7 @@
                                 
                                     // set the resulting array to associative
                                     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                                    
                                 
                                     foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $column=>$register) {
                                         echo $register;
@@ -78,6 +79,7 @@
                     <div id="divSubmit" class="form-input">
                         <input type="submit" value="Guardar">
                     </div>
+
                 </form>
             </fieldset>
             <fieldset>
@@ -121,6 +123,7 @@
                     <div id="divSubmit" class="form-input">
                         <input type="submit" value="Eliminar">
                     </div>
+
                 </form>
             </fieldset>
             <?PHP
