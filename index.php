@@ -17,14 +17,13 @@
         <?PHP
             include('./Resources/views/navbarMainMenu.php');
         ?>
-        <header class="header">
+        <!-- <header class="header">
             <div class="container">
                 <figure class="logo">
                     <img class="logo-principal" src="images/Simba Cabeza.png" height="50px" alt="Logo de Kahory's Shop" />
                 </figure>
-                <!-- <h1 class="encabezado-principal"> <strong class="color-strong">C</strong>omidas</h1> -->
             </div>
-        </header>
+        </header> -->
         <section class="hero">
             <div class="container">
                 <h1>
@@ -36,7 +35,7 @@
         <section id="portafolio" class="portfolio">
             <div class="container">
                 <!-- <h2>Mi catálogo de productos</h2> -->
-                <article class="project">
+                <!-- <article class="project">
                     <div class="project-details">
                         <h3 class="project-title">Banner Secundario</h3>
                         <p class="project-date"><small><strong>Presentación: </strong>390g.</small></p>
@@ -47,13 +46,13 @@
                     <figure class="project-imageContainer">
                         <img class="project-image" src="images/comidas_varias2.jpg" width="800" alt="Palmolive Agave Azul"/>
                     </figure>        
-                </article>
+                </article> -->
 
                 
             </div>
         </section>
  
-        <section id="contacto" class="contact">
+        <!-- <section id="contacto" class="contact">
             <div class="container">
                 <div class="sub-container">
                     <form action="/suscripcion/" class="form-email">
@@ -69,7 +68,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <?php
             include('./Resources/views/footer.php');
         ?>

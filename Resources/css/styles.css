@@ -209,6 +209,7 @@ figure{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 30px;/*Este lo añadi cuando quite el header que venia del sistemapos*/
 }
 
 .hero .container{
@@ -503,7 +504,7 @@ figure{
 .fondo{
   background-image: url('../../images/background.jpg');
   background-size: 100%;
-  background-repeat: round;
+  background-repeat: repeat;
 }
 
 .logo-principal{
@@ -518,7 +519,7 @@ figure{
 }
 
 .color-strong{
-  color: brown;
+  color: rgb(64, 50, 190), 0.777);
 }
 
 .link{
